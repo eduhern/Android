@@ -8,55 +8,46 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".QuestionActivity" >
-    
     <RelativeLayout
-            android:layout_width="match_parent"
-    		android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
-            >   
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        />
-    <TextView
-           android:id="@+id/puntuacion1"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:orientation="horizontal" >
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="wrap_content"
-            android:background="@drawable/puntuacion"
-            android:width="10dp"
-            android:height="3dp"
-			android:layout_alignParentRight="true"
-            android:paddingRight="10dp"
-            android:paddingLeft="14dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            
-            />
-        </RelativeLayout>
-    
-    <TextView
-           android:id="@+id/texto_pregunta"
-           android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/imagen" />
+        <TextView
+            android:id="@+id/puntuacion1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/puntuacion"
+            android:height="3dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
             android:textStyle="bold"
-            android:layout_weight="1" />
-    
+            android:width="10dp" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/texto_pregunta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textStyle="bold" />
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
-        android:layout_height="218dp" 
-        android:paddingTop="32dp"
+        android:layout_height="218dp"
+        android:background="@drawable/fondo_respuesta"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:background="@drawable/fondo_respuesta"
-        >
-        
+        android:paddingTop="32dp" >
     </ListView>
-
 </LinearLayout>

@@ -8,5 +8,7 @@
     <string name="title_activity_question">Pregunta</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_resultado">ResultadoActivity</string>
+    <string name="comenzar">Comenzar</string>
+    <string name="imagen">imagen</string>
 
 </resources>

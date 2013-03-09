@@ -6,11 +6,10 @@ import com.j256.ormlite.android.apptools.OrmLiteConfigUtil;
 
 public class DatabaseConfigUtil extends OrmLiteConfigUtil {
 
-	private static final Class<?>[] classes = new Class[] { 
-			Pregunta.class,
+	private static final Class<?>[] CLASSES = new Class[] { Pregunta.class,
 			Respuesta.class, };
 
 	public static void main(final String[] args) throws Exception {
-		writeConfigFile("ormlite_config.txt", classes);
+		writeConfigFile("ormlite_config.txt", CLASSES);
 	}
 }
