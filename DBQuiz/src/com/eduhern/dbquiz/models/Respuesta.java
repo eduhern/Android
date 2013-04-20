@@ -24,9 +24,9 @@ public class Respuesta implements Parcelable {
 	public Respuesta() {
 	}
 
-	public Respuesta(int id, boolean correcta, String descripcion, Pregunta pregunta) {
+	public Respuesta(final int id, final boolean correcta,
+			final String descripcion, final Pregunta pregunta) {
 		super();
-		this.id = id;
 		this.correcta = correcta;
 		this.descripcion = descripcion;
 		this.pregunta = pregunta;
@@ -36,7 +36,7 @@ public class Respuesta implements Parcelable {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
@@ -44,7 +44,7 @@ public class Respuesta implements Parcelable {
 		return correcta;
 	}
 
-	public void setCorrecta(boolean correcta) {
+	public void setCorrecta(final boolean correcta) {
 		this.correcta = correcta;
 	}
 
@@ -52,7 +52,7 @@ public class Respuesta implements Parcelable {
 		return descripcion;
 	}
 
-	public void setDescripcion(String descripcion) {
+	public void setDescripcion(final String descripcion) {
 		this.descripcion = descripcion;
 	}
 
@@ -60,38 +60,36 @@ public class Respuesta implements Parcelable {
 		return pregunta;
 	}
 
-	public void setPregunta(Pregunta pregunta) {
+	public void setPregunta(final Pregunta pregunta) {
 		this.pregunta = pregunta;
 	}
 
 	public int describeContents() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	public void writeToParcel(Parcel dest, int flags) {
-		// TODO Auto-generated method stub
+	public void writeToParcel(final Parcel dest, final int flags) {
 		dest.writeInt(id);
 		dest.writeByte((byte) (correcta ? 1 : 0));
 		dest.writeString(descripcion);
-		dest.writeParcelable(this.pregunta, flags);
+		dest.writeParcelable(pregunta, flags);
 	}
 
 	public static final Parcelable.Creator<Respuesta> CREATOR = new Parcelable.Creator<Respuesta>() {
-		public Respuesta createFromParcel(Parcel in) {
+		public Respuesta createFromParcel(final Parcel in) {
 			return new Respuesta(in);
 		}
 
-		public Respuesta[] newArray(int size) {
+		public Respuesta[] newArray(final int size) {
 			return new Respuesta[size];
 		}
 	};
 
-	public Respuesta(Parcel source) {
-		this.id = source.readInt();
-		this.correcta = (source.readByte() == 1 ? true : false);
-		this.descripcion = source.readString();
-		this.pregunta = source.readParcelable(Pregunta.class.getClassLoader());
+	public Respuesta(final Parcel source) {
+		id = source.readInt();
+		correcta = source.readByte() == 1 ? true : false;
+		descripcion = source.readString();
+		pregunta = source.readParcelable(Pregunta.class.getClassLoader());
 	}
 
 }

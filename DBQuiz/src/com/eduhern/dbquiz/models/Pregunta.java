@@ -36,7 +36,7 @@ public class Pregunta implements Parcelable {
 		return new ArrayList<Respuesta>(respuestas);
 	}
 
-	public void setRespuestas(ForeignCollection<Respuesta> respuestas) {
+	public void setRespuestas(final ForeignCollection<Respuesta> respuestas) {
 		this.respuestas = respuestas;
 	}
 
@@ -44,14 +44,15 @@ public class Pregunta implements Parcelable {
 		return imagen;
 	}
 
-	public void setImagen(String imagen) {
+	public void setImagen(final String imagen) {
 		this.imagen = imagen;
 	}
 
 	public Pregunta() {
 	}
 
-	public Pregunta(int id, String descripcion, String imagen, Categoria categoria, int dificultad) {
+	public Pregunta(final int id, final String descripcion,
+			final String imagen, final Categoria categoria, final int dificultad) {
 		this.id = id;
 		this.descripcion = descripcion;
 		this.imagen = imagen;
@@ -63,7 +64,7 @@ public class Pregunta implements Parcelable {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
@@ -71,7 +72,7 @@ public class Pregunta implements Parcelable {
 		return descripcion;
 	}
 
-	public void setDescripcion(String descripcion) {
+	public void setDescripcion(final String descripcion) {
 		this.descripcion = descripcion;
 	}
 
@@ -79,7 +80,7 @@ public class Pregunta implements Parcelable {
 		return categoria;
 	}
 
-	public void setIdCategoria(Categoria categoria) {
+	public void setIdCategoria(final Categoria categoria) {
 		this.categoria = categoria;
 	}
 
@@ -87,38 +88,37 @@ public class Pregunta implements Parcelable {
 		return dificultad;
 	}
 
-	public void setDificultad(int dificultad) {
+	public void setDificultad(final int dificultad) {
 		this.dificultad = dificultad;
 	}
 
 	public int describeContents() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	public void writeToParcel(Parcel dest, int flags) {
+	public void writeToParcel(final Parcel dest, final int flags) {
 		dest.writeInt(id);
 		dest.writeString(descripcion);
 		dest.writeString(imagen);
-		dest.writeParcelable(this.categoria, flags);
+		dest.writeParcelable(categoria, flags);
 		dest.writeInt(dificultad);
 	}
 
 	public static final Parcelable.Creator<Pregunta> CREATOR = new Parcelable.Creator<Pregunta>() {
-		public Pregunta createFromParcel(Parcel in) {
+		public Pregunta createFromParcel(final Parcel in) {
 			return new Pregunta(in);
 		}
 
-		public Pregunta[] newArray(int size) {
+		public Pregunta[] newArray(final int size) {
 			return new Pregunta[size];
 		}
 	};
 
-	public Pregunta(Parcel source) {
-		this.id = source.readInt();
-		this.descripcion = source.readString();
-		this.imagen = source.readString();
-		this.categoria = source.readParcelable(Categoria.class.getClassLoader());
-		this.dificultad = source.readInt();
+	public Pregunta(final Parcel source) {
+		id = source.readInt();
+		descripcion = source.readString();
+		imagen = source.readString();
+		categoria = source.readParcelable(Categoria.class.getClassLoader());
+		dificultad = source.readInt();
 	}
 }

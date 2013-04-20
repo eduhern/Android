@@ -15,26 +15,15 @@
             android:persistent="true" />
 
         <CheckBoxPreference
+            android:defaultValue="false"
             android:icon="@drawable/ic_dificultad"
             android:key="dificultad"
-            android:summary="¿Te atreves con la dificultad máxima?"
-            android:title="Modo experto"
-            android:summaryOn="Modo experto activado"
-            android:summaryOff="Modo experto desactivado"
-			android:defaultValue="false"
             android:persistent="true"
-            />
+            android:summary="¿Te atreves con la dificultad máxima?"
+            android:summaryOff="Modo experto desactivado"
+            android:summaryOn="Modo experto activado"
+            android:title="Modo experto" />
 
-        <SwitchPreference
-            android:icon="@drawable/ic_chico_chica"
-            android:key="genero"
-            android:summaryOff="¡Final para chicos!"
-            android:summaryOn="¡Final para chicas!"
-            android:switchTextOff="Chico"
-            android:switchTextOn="Chica"
-			android:defaultValue="true"
-            android:title="Género"
-            android:persistent="true" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -1,0 +1,126 @@
+Found a 11 line (71 tokens) duplication in the following files: 
+Starting at line 17 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\activity\RespuestaAdapter.java
+Starting at line 17 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\activity\CategoriaAdapter.java
+
+			final List<Respuesta> transactions) {
+		super(context, resource, transactions);
+	}
+
+	@Override
+	public View getView(final int position, View convertView,
+			final ViewGroup parent) {
+		if (convertView == null) {
+			final LayoutInflater vi = (LayoutInflater) getContext()
+					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			convertView = vi.inflate(com.eduhern.dbquiz.R.layout.fila, null);
+=====================================================================
+Found a 19 line (51 tokens) duplication in the following files: 
+Starting at line 61 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Pregunta.java
+Starting at line 38 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Categoria.java
+
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(final int id) {
+		this.id = id;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(final String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Categoria getIdCategoria() {
+=====================================================================
+Found a 9 line (31 tokens) duplication in the following files: 
+Starting at line 65 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Respuesta.java
+Starting at line 93 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Pregunta.java
+
+	}
+
+	public int describeContents() {
+		return 0;
+	}
+
+	public void writeToParcel(final Parcel dest, final int flags) {
+		dest.writeInt(id);
+		dest.writeByte((byte) (correcta ? 1 : 0));
+=====================================================================
+Found a 6 line (30 tokens) duplication in the following files: 
+Starting at line 97 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Pregunta.java
+Starting at line 87 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Categoria.java
+
+	}
+
+	public void writeToParcel(final Parcel dest, final int flags) {
+		dest.writeInt(id);
+		dest.writeString(descripcion);
+		dest.writeString(imagen);
+=====================================================================
+Found a 11 line (29 tokens) duplication in the following files: 
+Starting at line 20 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\activity\PreferenciasActivity.java
+Starting at line 20 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\activity\CreditosActivity.java
+Starting at line 30 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\activity\AyudaActivity.java
+
+		getMenuInflater().inflate(R.menu.preference, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(final MenuItem item) {
+		finish();
+		return super.onOptionsItemSelected(item);
+	}
+
+}
+=====================================================================
+Found a 11 line (26 tokens) duplication in the following files: 
+Starting at line 33 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Respuesta.java
+Starting at line 61 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Pregunta.java
+Starting at line 38 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Categoria.java
+
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(final int id) {
+		this.id = id;
+	}
+
+	public boolean isCorrecta() {
+=====================================================================
+Found a 11 line (26 tokens) duplication in the following files: 
+Starting at line 49 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Respuesta.java
+Starting at line 69 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Pregunta.java
+Starting at line 46 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\models\Categoria.java
+
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(final String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Pregunta getPregunta() {
+=====================================================================
+Found a 6 line (26 tokens) duplication in the following files: 
+Starting at line 32 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\activity\ResultadoActivity.java
+Starting at line 44 of D:\dev\workspace\Android\Android\DBQuiz\src\com\eduhern\dbquiz\activity\QuestionActivity.java
+
+		setContentView(R.layout.activity_resultado);
+
+		final SharedPreferences preferencias = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		maximoPreguntas = Integer.parseInt(preferencias.getString(
+				"numPreguntas", "30"));

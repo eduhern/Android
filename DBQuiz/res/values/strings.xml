@@ -31,5 +31,6 @@
     <string name="tuitear">Tuitear</string>
     <string name="dbcproject">La mayor parte de los renders son propiedad de "DBCProject: Dragon Ball Characters Project", publicados en http://dbcproject.deviantart.com/ y en http://www.boladedragon.com/foro.</string>
     <string name="title_activity_preference">Preferencias</string>
-
+    <string name="preferencias">Preferencias</string>
+    <string name="acerca_de_">Acerca de...</string>
 </resources>
