@@ -36,6 +36,7 @@ tableName=respuesta
 # --table-fields-start--
 # --field-start--
 fieldName=id
+generatedId=true
 # --field-end--
 # --field-start--
 fieldName=correcta

@@ -13,7 +13,7 @@ import com.eduhern.dbquiz.models.Respuesta;
 
 public class RespuestaAdapter extends ArrayAdapter<Respuesta> {
 
-	public RespuestaAdapter(QuestionActivity context, final int resource,
+	public RespuestaAdapter(final QuestionActivity context, final int resource,
 			final List<Respuesta> transactions) {
 		super(context, resource, transactions);
 	}
@@ -22,13 +22,13 @@ public class RespuestaAdapter extends ArrayAdapter<Respuesta> {
 	public View getView(final int position, View convertView,
 			final ViewGroup parent) {
 		if (convertView == null) {
-			LayoutInflater vi = (LayoutInflater) getContext().getSystemService(
-					Context.LAYOUT_INFLATER_SERVICE);
+			final LayoutInflater vi = (LayoutInflater) getContext()
+					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			convertView = vi.inflate(com.eduhern.dbquiz.R.layout.fila, null);
 		}
 
-		Respuesta transaction = getItem(position);
-		TextView fila1 = (TextView) convertView
+		final Respuesta transaction = getItem(position);
+		final TextView fila1 = (TextView) convertView
 				.findViewById(com.eduhern.dbquiz.R.id.fila1);
 
 		fila1.setText(transaction.getDescripcion());

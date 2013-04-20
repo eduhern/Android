@@ -24,12 +24,12 @@ public class Respuesta implements Parcelable {
 	public Respuesta() {
 	}
 
-	public Respuesta(int id, boolean correcta, String descripcion, Pregunta pregunta) {
+	public Respuesta(final int id, boolean correcta, String descripcion,
+			Pregunta pregunta) {
 		super();
-		this.id = id;
-		this.correcta = correcta;
-		this.descripcion = descripcion;
-		this.pregunta = pregunta;
+		correcta = correcta;
+		descripcion = descripcion;
+		pregunta = pregunta;
 	}
 
 	public int getId() {
@@ -37,7 +37,7 @@ public class Respuesta implements Parcelable {
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		id = id;
 	}
 
 	public boolean isCorrecta() {
@@ -45,7 +45,7 @@ public class Respuesta implements Parcelable {
 	}
 
 	public void setCorrecta(boolean correcta) {
-		this.correcta = correcta;
+		correcta = correcta;
 	}
 
 	public String getDescripcion() {
@@ -53,14 +53,14 @@ public class Respuesta implements Parcelable {
 	}
 
 	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+		descripcion = descripcion;
 	}
 
 	public Pregunta getPregunta() {
 		return pregunta;
 	}
 
-	public void setPregunta(Pregunta pregunta) {
+	public void setPregunta(final Pregunta pregunta) {
 		this.pregunta = pregunta;
 	}
 
@@ -69,12 +69,12 @@ public class Respuesta implements Parcelable {
 		return 0;
 	}
 
-	public void writeToParcel(Parcel dest, int flags) {
+	public void writeToParcel(final Parcel dest, final int flags) {
 		// TODO Auto-generated method stub
 		dest.writeInt(id);
 		dest.writeByte((byte) (correcta ? 1 : 0));
 		dest.writeString(descripcion);
-		dest.writeParcelable(this.pregunta, flags);
+		dest.writeParcelable(pregunta, flags);
 	}
 
 	public static final Parcelable.Creator<Respuesta> CREATOR = new Parcelable.Creator<Respuesta>() {
@@ -87,11 +87,11 @@ public class Respuesta implements Parcelable {
 		}
 	};
 
-	public Respuesta(Parcel source) {
-		this.id = source.readInt();
-		this.correcta = (source.readByte() == 1 ? true : false);
-		this.descripcion = source.readString();
-		this.pregunta = source.readParcelable(Pregunta.class.getClassLoader());
+	public Respuesta(final Parcel source) {
+		id = source.readInt();
+		correcta = source.readByte() == 1 ? true : false;
+		descripcion = source.readString();
+		pregunta = source.readParcelable(Pregunta.class.getClassLoader());
 	}
 
 }

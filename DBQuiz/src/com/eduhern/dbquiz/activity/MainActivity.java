@@ -14,11 +14,12 @@ import com.eduhern.dbquiz.R;
 import com.eduhern.dbquiz.database.DatabaseHelper;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
-public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements OnClickListener {
+public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
+		OnClickListener {
 	MediaPlayer musica;
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
@@ -34,22 +35,22 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 		super.onResume();
 	}
 
-	public void onClick(View arg0) {
+	public void onClick(final View arg0) {
 		musica.stop();
-		Intent intent = new Intent(this, QuestionActivity.class);
+		final Intent intent = new Intent(this, QuestionActivity.class);
 		startActivity(intent);
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflate = getMenuInflater();
+	public boolean onCreateOptionsMenu(final Menu menu) {
+		final MenuInflater inflate = getMenuInflater();
 		inflate.inflate(R.menu.activity_main, menu);
 		return super.onCreateOptionsMenu(menu);
 
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(final MenuItem item) {
 
 		switch (item.getItemId()) {
 		case R.id.action_preferencias:

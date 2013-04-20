@@ -38,12 +38,11 @@
             android:id="@+id/puntuacion1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:background="@drawable/puntuacion"
             android:gravity="center"
             android:text="@string/resultado_inicial"
-            android:textStyle="bold"
-            android:layout_alignParentRight="true"
-             />
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <TextView
@@ -53,39 +52,38 @@
         android:layout_weight="3"
         android:background="@drawable/fondo_texto_pregunta"
         android:gravity="center"
-        android:textStyle="bold"
         android:textIsSelectable="true"
-         />
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
         android:background="@drawable/fondo_respuesta"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical" >
+
         <ImageView
             android:id="@+id/m"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:src="@drawable/m"
+            android:layout_centerInParent="true"
             android:contentDescription="@string/m"
             android:paddingBottom="10dp"
-            android:layout_centerInParent="true"
-             />
+            android:src="@drawable/m" />
+
         <ListView
             android:id="@android:id/list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:divider="@android:color/black"
             android:dividerHeight="0.5dp"
-             >
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp" >
         </ListView>
     </RelativeLayout>
+
 </LinearLayout>

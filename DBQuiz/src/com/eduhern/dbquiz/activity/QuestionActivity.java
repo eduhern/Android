@@ -42,26 +42,35 @@ public class QuestionActivity extends OrmLiteBaseListActivity<DatabaseHelper> {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_question);
 		numeroPreguntaAleatorio = new Random();
-		SharedPreferences preferencias = PreferenceManager.getDefaultSharedPreferences(this);
-		maximoPreguntas = Integer.parseInt(preferencias.getString("numPreguntas", "30"));
-		String dificultad = (preferencias.getBoolean("dificultad", false) ? "2" : "1");
+		final SharedPreferences preferencias = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		maximoPreguntas = Integer.parseInt(preferencias.getString(
+				"numPreguntas", "30"));
+		final String dificultad = preferencias.getBoolean("dificultad", false) ? "2"
+				: "1";
 
 		if (savedInstanceState == null) {
-			preguntas = getHelper().getPreguntaDAO().queryForEq("dificultad", dificultad);
+			preguntas = getHelper().getPreguntaDAO().queryForEq("dificultad",
+					dificultad);
 			Log.d("PREGUNTAS FACILES: ", "" + preguntas.size());
 			recuperarSiguientePregunta();
 		} else {
 			preguntas = savedInstanceState.getParcelableArrayList("preguntas");
-			preguntasYaJugadas = savedInstanceState.getParcelableArrayList("preguntasYaJugadas");
-			posicionPreguntaActual = savedInstanceState.getInt("posicionPreguntaActual");
-			respuestasCorrectas = savedInstanceState.getInt("respuestasCorrectas");
-			((TextView) findViewById(R.id.puntuacion1)).setText(String.valueOf(respuestasCorrectas));
+			preguntasYaJugadas = savedInstanceState
+					.getParcelableArrayList("preguntasYaJugadas");
+			posicionPreguntaActual = savedInstanceState
+					.getInt("posicionPreguntaActual");
+			respuestasCorrectas = savedInstanceState
+					.getInt("respuestasCorrectas");
+			((TextView) findViewById(R.id.puntuacion1)).setText(String
+					.valueOf(respuestasCorrectas));
 			preguntaActual = preguntas.get(posicionPreguntaActual);
 			actualizarPantalla();
 		}
 
 		respuestas = preguntaActual.getRespuestas();
-		adapter = new RespuestaAdapter(this, com.eduhern.dbquiz.R.layout.fila, respuestas);
+		adapter = new RespuestaAdapter(this, com.eduhern.dbquiz.R.layout.fila,
+				respuestas);
 		setListAdapter(adapter);
 
 		correcto = MediaPlayer.create(this, R.raw.correcto);
@@ -70,20 +79,27 @@ public class QuestionActivity extends OrmLiteBaseListActivity<DatabaseHelper> {
 	}
 
 	@Override
-	protected void onListItemClick(final ListView l, final View v, final int posicion, final long id) {
+	protected void onListItemClick(final ListView l, final View v,
+			final int posicion, final long id) {
 		if (preguntaActual.getRespuestas().get(posicion).isCorrecta()) {
 			correcto.start();
 			respuestasCorrectas++;
-			((TextView) findViewById(R.id.puntuacion1)).setBackgroundDrawable(getResources().getDrawable(
-					getResources().getIdentifier("puntuacion_ok", "drawable", getPackageName())));
+			((TextView) findViewById(R.id.puntuacion1))
+					.setBackgroundDrawable(getResources().getDrawable(
+							getResources().getIdentifier("puntuacion_ok",
+									"drawable", getPackageName())));
 		} else {
 			fallo.start();
-			((TextView) findViewById(R.id.puntuacion1)).setBackgroundDrawable(getResources().getDrawable(
-					getResources().getIdentifier("puntuacion_bad", "drawable", getPackageName())));
+			((TextView) findViewById(R.id.puntuacion1))
+					.setBackgroundDrawable(getResources().getDrawable(
+							getResources().getIdentifier("puntuacion_bad",
+									"drawable", getPackageName())));
 		}
-		((TextView) findViewById(R.id.puntuacion1)).setText(String.valueOf(respuestasCorrectas));
+		((TextView) findViewById(R.id.puntuacion1)).setText(String
+				.valueOf(respuestasCorrectas));
 
-		if (preguntasYaJugadas.size() == maximoPreguntas || preguntasYaJugadas.size() >= preguntas.size()) {
+		if (preguntasYaJugadas.size() == maximoPreguntas
+				|| preguntasYaJugadas.size() >= preguntas.size()) {
 			final Intent intent = new Intent(this, ResultadoActivity.class);
 			intent.putExtra("resultado", String.valueOf(respuestasCorrectas));
 			finish();
@@ -98,29 +114,36 @@ public class QuestionActivity extends OrmLiteBaseListActivity<DatabaseHelper> {
 
 	private void recuperarSiguientePregunta() {
 		do {
-			posicionPreguntaActual = numeroPreguntaAleatorio.nextInt(preguntas.size());
-		} while (preguntasYaJugadas.contains(preguntas.get(posicionPreguntaActual)));
+			posicionPreguntaActual = numeroPreguntaAleatorio.nextInt(preguntas
+					.size());
+		} while (preguntasYaJugadas.contains(preguntas
+				.get(posicionPreguntaActual)));
 		preguntaActual = preguntas.get(posicionPreguntaActual);
 		preguntasYaJugadas.add(preguntaActual);
 		actualizarPantalla();
 
 		new Handler().postDelayed(new Runnable() {
 			public void run() {
-				((TextView) findViewById(R.id.puntuacion1)).setBackgroundDrawable(getResources().getDrawable(
-						getResources().getIdentifier("puntuacion", "drawable", getPackageName())));
+				((TextView) findViewById(R.id.puntuacion1))
+						.setBackgroundDrawable(getResources().getDrawable(
+								getResources().getIdentifier("puntuacion",
+										"drawable", getPackageName())));
 			}
 		}, 200);
 
 	}
 
 	private void actualizarPantalla() {
-		final int id = getResources().getIdentifier(preguntaActual.getImagen(), "drawable", getPackageName());
+		final int id = getResources().getIdentifier(preguntaActual.getImagen(),
+				"drawable", getPackageName());
 
 		final Drawable drawable = getResources().getDrawable(id);
 		final ImageView imagen = (ImageView) findViewById(R.id.imageView2);
 		imagen.setImageDrawable(drawable);
 
-		final int id_c = getResources().getIdentifier(preguntaActual.getIdCategoria().getFondo(), "drawable", getPackageName());
+		final int id_c = getResources().getIdentifier(
+				preguntaActual.getIdCategoria().getFondo(), "drawable",
+				getPackageName());
 		final Drawable drawable_c = getResources().getDrawable(id_c);
 		final ImageView imagen_categoria = (ImageView) findViewById(R.id.categoria);
 
@@ -131,12 +154,14 @@ public class QuestionActivity extends OrmLiteBaseListActivity<DatabaseHelper> {
 	}
 
 	@Override
-	protected void onSaveInstanceState(Bundle outState) {
+	protected void onSaveInstanceState(final Bundle outState) {
 		super.onSaveInstanceState(outState);
 		outState.putInt("posicionPreguntaActual", posicionPreguntaActual);
 		outState.putInt("respuestasCorrectas", respuestasCorrectas);
-		outState.putParcelableArrayList("preguntas", new ArrayList<Pregunta>(preguntas));
-		outState.putParcelableArrayList("preguntasYaJugadas", new ArrayList<Pregunta>(preguntasYaJugadas));
+		outState.putParcelableArrayList("preguntas", new ArrayList<Pregunta>(
+				preguntas));
+		outState.putParcelableArrayList("preguntasYaJugadas",
+				new ArrayList<Pregunta>(preguntasYaJugadas));
 	}
 
 }

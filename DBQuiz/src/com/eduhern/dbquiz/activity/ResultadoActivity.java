@@ -17,7 +17,8 @@ import android.widget.TextView;
 
 import com.eduhern.dbquiz.R;
 
-public class ResultadoActivity extends Activity implements OnLongClickListener, OnClickListener {
+public class ResultadoActivity extends Activity implements OnLongClickListener,
+		OnClickListener {
 	private ImageView imagen_fin;
 	private boolean fin = false;
 	private int respuestasCorrectas;
@@ -26,45 +27,56 @@ public class ResultadoActivity extends Activity implements OnLongClickListener, 
 	private boolean dificultad = false;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_resultado);
 
-		SharedPreferences preferencias = PreferenceManager.getDefaultSharedPreferences(this);
-		maximoPreguntas = Integer.parseInt(preferencias.getString("numPreguntas", "30"));
+		final SharedPreferences preferencias = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		maximoPreguntas = Integer.parseInt(preferencias.getString(
+				"numPreguntas", "30"));
 		genero = !preferencias.getBoolean("genero", false);
 		dificultad = preferencias.getBoolean("dificultad", false);
 
-		TextView textViewPregunta = (TextView) findViewById(R.id.texto_resultado);
-		respuestasCorrectas = Integer.parseInt(getIntent().getStringExtra("resultado"));
-		textViewPregunta.setText(respuestasCorrectas + " de " + maximoPreguntas + " respuestas correctas");
+		final TextView textViewPregunta = (TextView) findViewById(R.id.texto_resultado);
+		respuestasCorrectas = Integer.parseInt(getIntent().getStringExtra(
+				"resultado"));
+		textViewPregunta.setText(respuestasCorrectas + " de " + maximoPreguntas
+				+ " respuestas correctas");
 
 		imagen_fin = (ImageView) findViewById(R.id.imagen_resultado);
 
 		if (!genero) {
-			int id_imagen_resultado = getResources().getIdentifier("foto_camara_principal_g", "drawable", getPackageName());
-			Drawable drawable = getResources().getDrawable(id_imagen_resultado);
+			final int id_imagen_resultado = getResources().getIdentifier(
+					"foto_camara_principal_g", "drawable", getPackageName());
+			final Drawable drawable = getResources().getDrawable(
+					id_imagen_resultado);
 			imagen_fin.setImageDrawable(drawable);
 		}
 
 		imagen_fin.setOnLongClickListener(this);
 
-		Button boton = (Button) findViewById(R.id.boton1);
+		final Button boton = (Button) findViewById(R.id.boton1);
 		boton.setOnClickListener(this);
 
-		ImageView imagenTwitter = (ImageView) findViewById(R.id.twitter);
+		final ImageView imagenTwitter = (ImageView) findViewById(R.id.twitter);
 		imagenTwitter.setOnClickListener(this);
 	}
 
-	public void onClick(View v) {
+	public void onClick(final View v) {
 
 		switch (v.getId()) {
 
 		case R.id.twitter:
-			String tweetUrl = "https://twitter.com/intent/tweet?text=He acertado " + respuestasCorrectas + " de " + maximoPreguntas
-					+ " preguntas en el Dragon Ball QuiZ para Android" + (dificultad ? " (nivel experto)" : " (nivel fácil)")
-					+ ". Ya disponible en Google Play:&url=" + "https://play.google.com/store/apps/details?id=com.eduhern.dbquiz";
-			Uri uri = Uri.parse(tweetUrl);
+			final String tweetUrl = "https://twitter.com/intent/tweet?text=He acertado "
+					+ respuestasCorrectas
+					+ " de "
+					+ maximoPreguntas
+					+ " preguntas en el Dragon Ball QuiZ para Android"
+					+ (dificultad ? " (nivel experto)" : " (nivel fácil)")
+					+ ". Ya disponible en Google Play:&url="
+					+ "https://play.google.com/store/apps/details?id=com.eduhern.dbquiz";
+			final Uri uri = Uri.parse(tweetUrl);
 			startActivity(new Intent(Intent.ACTION_VIEW, uri));
 			break;
 		default:
@@ -73,7 +85,7 @@ public class ResultadoActivity extends Activity implements OnLongClickListener, 
 
 	}
 
-	public boolean onLongClick(View v) {
+	public boolean onLongClick(final View v) {
 		// TODO Auto-generated method stub
 		MediaPlayer musica;
 
@@ -92,45 +104,59 @@ public class ResultadoActivity extends Activity implements OnLongClickListener, 
 
 		int id_imagen_final;
 
-		int porcentaje = Math.round((Float.parseFloat(String.valueOf(respuestasCorrectas)) / Float.parseFloat(String.valueOf(maximoPreguntas))) * 100);
+		final int porcentaje = Math.round(Float.parseFloat(String
+				.valueOf(respuestasCorrectas))
+				/ Float.parseFloat(String.valueOf(maximoPreguntas)) * 100);
 
 		if (genero) {
 			if (porcentaje < 25) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_1", "drawable", getPackageName());
+				id_imagen_final = getResources().getIdentifier("foto_camara_1",
+						"drawable", getPackageName());
 			} else if (25 <= porcentaje && porcentaje < 50) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_2", "drawable", getPackageName());
+				id_imagen_final = getResources().getIdentifier("foto_camara_2",
+						"drawable", getPackageName());
 			} else if (50 <= porcentaje && porcentaje < 75) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_3", "drawable", getPackageName());
+				id_imagen_final = getResources().getIdentifier("foto_camara_3",
+						"drawable", getPackageName());
 			} else if (75 <= porcentaje && porcentaje < 100) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_4", "drawable", getPackageName());
+				id_imagen_final = getResources().getIdentifier("foto_camara_4",
+						"drawable", getPackageName());
 			} else {
 				if (maximoPreguntas == 50 && dificultad) {
-					id_imagen_final = getResources().getIdentifier("foto_camara_god", "drawable", getPackageName());
+					id_imagen_final = getResources().getIdentifier(
+							"foto_camara_god", "drawable", getPackageName());
 				} else {
-					id_imagen_final = getResources().getIdentifier("foto_camara_5", "drawable", getPackageName());
+					id_imagen_final = getResources().getIdentifier(
+							"foto_camara_5", "drawable", getPackageName());
 
 				}
 			}
 		} else {
 			if (porcentaje < 25) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_1_g", "drawable", getPackageName());
+				id_imagen_final = getResources().getIdentifier(
+						"foto_camara_1_g", "drawable", getPackageName());
 			} else if (25 <= porcentaje && porcentaje < 50) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_2_g", "drawable", getPackageName());
+				id_imagen_final = getResources().getIdentifier(
+						"foto_camara_2_g", "drawable", getPackageName());
 			} else if (50 <= porcentaje && porcentaje < 75) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_3_g", "drawable", getPackageName());
+				id_imagen_final = getResources().getIdentifier(
+						"foto_camara_3_g", "drawable", getPackageName());
 			} else if (75 <= porcentaje && porcentaje < 100) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_4_g", "drawable", getPackageName());
+				id_imagen_final = getResources().getIdentifier(
+						"foto_camara_4_g", "drawable", getPackageName());
 			} else {
 				if (maximoPreguntas == 50 && dificultad) {
-					id_imagen_final = getResources().getIdentifier("foto_camara_god", "drawable", getPackageName());
+					id_imagen_final = getResources().getIdentifier(
+							"foto_camara_god", "drawable", getPackageName());
 				} else {
-					id_imagen_final = getResources().getIdentifier("foto_camara_5", "drawable", getPackageName());
+					id_imagen_final = getResources().getIdentifier(
+							"foto_camara_5", "drawable", getPackageName());
 
 				}
 			}
 		}
 
-		Drawable drawable = getResources().getDrawable(id_imagen_final);
+		final Drawable drawable = getResources().getDrawable(id_imagen_final);
 		imagen_fin.setImageDrawable(drawable);
 
 		fin = true;

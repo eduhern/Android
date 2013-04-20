@@ -37,7 +37,7 @@ public class Pregunta implements Parcelable {
 	}
 
 	public void setRespuestas(ForeignCollection<Respuesta> respuestas) {
-		this.respuestas = respuestas;
+		respuestas = respuestas;
 	}
 
 	public String getImagen() {
@@ -45,18 +45,19 @@ public class Pregunta implements Parcelable {
 	}
 
 	public void setImagen(String imagen) {
-		this.imagen = imagen;
+		imagen = imagen;
 	}
 
 	public Pregunta() {
 	}
 
-	public Pregunta(int id, String descripcion, String imagen, Categoria categoria, int dificultad) {
-		this.id = id;
-		this.descripcion = descripcion;
-		this.imagen = imagen;
-		this.categoria = categoria;
-		this.dificultad = dificultad;
+	public Pregunta(int id, String descripcion, String imagen,
+			Categoria categoria, int dificultad) {
+		id = id;
+		descripcion = descripcion;
+		imagen = imagen;
+		categoria = categoria;
+		dificultad = dificultad;
 	}
 
 	public int getId() {
@@ -64,7 +65,7 @@ public class Pregunta implements Parcelable {
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		id = id;
 	}
 
 	public String getDescripcion() {
@@ -72,7 +73,7 @@ public class Pregunta implements Parcelable {
 	}
 
 	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+		descripcion = descripcion;
 	}
 
 	public Categoria getIdCategoria() {
@@ -80,7 +81,7 @@ public class Pregunta implements Parcelable {
 	}
 
 	public void setIdCategoria(Categoria categoria) {
-		this.categoria = categoria;
+		categoria = categoria;
 	}
 
 	public int getDificultad() {
@@ -88,7 +89,7 @@ public class Pregunta implements Parcelable {
 	}
 
 	public void setDificultad(int dificultad) {
-		this.dificultad = dificultad;
+		dificultad = dificultad;
 	}
 
 	public int describeContents() {
@@ -100,7 +101,7 @@ public class Pregunta implements Parcelable {
 		dest.writeInt(id);
 		dest.writeString(descripcion);
 		dest.writeString(imagen);
-		dest.writeParcelable(this.categoria, flags);
+		dest.writeParcelable(categoria, flags);
 		dest.writeInt(dificultad);
 	}
 
@@ -115,10 +116,10 @@ public class Pregunta implements Parcelable {
 	};
 
 	public Pregunta(Parcel source) {
-		this.id = source.readInt();
-		this.descripcion = source.readString();
-		this.imagen = source.readString();
-		this.categoria = source.readParcelable(Categoria.class.getClassLoader());
-		this.dificultad = source.readInt();
+		id = source.readInt();
+		descripcion = source.readString();
+		imagen = source.readString();
+		categoria = source.readParcelable(Categoria.class.getClassLoader());
+		dificultad = source.readInt();
 	}
 }
