@@ -16,7 +16,7 @@ import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
 public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 		OnClickListener {
-	MediaPlayer musica;
+	private MediaPlayer musica;
 
 	@Override
 	public void onCreate(final Bundle savedInstanceState) {
@@ -31,8 +31,9 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 	}
 
 	@Override
-	protected void onResume() {
-		super.onResume();
+	protected void onPause() {
+		musica.stop();
+		super.onPause();
 	}
 
 	public void onClick(final View arg0) {
@@ -51,21 +52,19 @@ public class MainActivity extends OrmLiteBaseActivity<DatabaseHelper> implements
 
 	@Override
 	public boolean onOptionsItemSelected(final MenuItem item) {
-
+		Intent intent = null;
 		switch (item.getItemId()) {
 		case R.id.action_preferencias:
-			final Intent intent = new Intent(this, PreferenciasActivity.class);
-			startActivity(intent);
+			intent = new Intent(this, PreferenciasActivity.class);
 			break;
 		case R.id.action_settings:
-			final Intent intent2 = new Intent(this, AyudaActivity.class);
-			startActivity(intent2);
+			intent = new Intent(this, AyudaActivity.class);
 			break;
-		case R.id.action_acerca_de:
-			final Intent intent3 = new Intent(this, CreditosActivity.class);
-			startActivity(intent3);
+		default:
+			intent = new Intent(this, CreditosActivity.class);
 			break;
 		}
+		startActivity(intent);
 
 		return super.onOptionsItemSelected(item);
 

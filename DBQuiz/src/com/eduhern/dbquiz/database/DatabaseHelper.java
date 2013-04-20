@@ -16,7 +16,6 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
-
 	private static final String DATABASE_NAME = "dbquiz.db";
 	private static final int DATABASE_VERSION = 50;
 
@@ -85,7 +84,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 				1,
 				"Geografía",
 				"imagen_geografia",
-				"Preguntas realacionadas con los distintos lugares de la partícular tierra y universo que envuelve a la obra de Toriyama y la Toei Animation");
+				"Preguntas relacionadas con los distintos lugares de la partícular tierra y universo que envuelve a la obra de Toriyama y la Toei Animation");
 		final Categoria ciencia = new Categoria(
 				2,
 				"Ciencia, Tecnología y Videojuegos",
@@ -118,7 +117,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		getCategoriaDAO().create(torneos);
 		getCategoriaDAO().create(dragon);
 		getCategoriaDAO().create(historia);
-
 		final Pregunta pregunta1 = new Pregunta(1,
 				"¿Cuál es el nombre de estos tres famosos villanos?",
 				"imagen1", dragon, 1);
@@ -152,125 +150,75 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 				10,
 				"¿Cuál es el nombre de estos dos personajes del film de 2013 Dragon Ball Z 'Battle of Gods'?",
 				"imagen10", dragon, 2);
-		final Pregunta pregunta11 = new Pregunta(11,
-				"¿Para qué sirve el objeto de la fotografía?", "imagen11",
-				ciencia, 1);
-		final Pregunta pregunta12 = new Pregunta(12,
-				"¿Para qué sirve el objeto de la fotografía?", "imagen12",
-				ciencia, 1);
-		final Pregunta pregunta13 = new Pregunta(
-				13,
-				"¿En qué plataforma podemos disfrutar del juego Dragon Ball Z 'Buyu Retsuden'?",
-				"imagen13", ciencia, 2);
-		final Pregunta pregunta14 = new Pregunta(14,
-				"¿Cuál era el principal poder del personaje de la imagen?",
-				"imagen14", ciencia, 2);
-		final Pregunta pregunta15 = new Pregunta(
-				15,
-				"¿En qué capítulo de Dragon Ball GT alcanza Goku el estado de SSJ3 siendo un niño?",
-				"imagen15", historia, 2);
-		final Pregunta pregunta16 = new Pregunta(
-				16,
-				"¿Qué parentesco comparte el personaje de la fotografía con Goku (Kakarotto)?",
-				"imagen16", historia, 1);
-		final Pregunta pregunta17 = new Pregunta(17,
-				"Goku adulto en DBGT convertido en SSJ, ¿es posible?",
-				"imagen17", ciencia, 2);
-		final Pregunta pregunta18 = new Pregunta(
-				18,
-				"¿Qué videojuego es el que se corresponde con el de la imagen?",
-				"imagen18", ciencia, 2);
-		final Pregunta pregunta19 = new Pregunta(19,
-				"¿Cómo se llama el curioso personaje de la fotografía?",
-				"imagen19", dragon, 2);
-		final Pregunta pregunta20 = new Pregunta(20,
-				"¿Cuál es el nombre del guardian de la puerta del otro mundo?",
-				"imagen20", dragon, 1);
-		final Pregunta pregunta21 = new Pregunta(
-				21,
-				"¿A qué se debe el aspecto que presenta Cooler en esta imagen?",
-				"imagen21", ciencia, 2);
-		final Pregunta pregunta22 = new Pregunta(22,
-				"¿Cómo se llama la novia de Son Gohan?", "imagen22", dragon, 1);
-		final Pregunta pregunta23 = new Pregunta(
-				23,
-				"¿En qué edición del Tenkaichi Budokai participó Punta, el personaje de la imagen?",
-				"imagen23", torneos, 2);
-		final Pregunta pregunta24 = new Pregunta(24,
-				"¿Cuál es el nombre del principe de los saiyans?", "imagen24",
-				dragon, 1);
-		final Pregunta pregunta25 = new Pregunta(25,
-				"¿En qué fase se encuentra Freezer en esta monstruosa forma?",
-				"imagen25", ciencia, 1);
-		final Pregunta pregunta26 = new Pregunta(26,
-				"¿De qué dos luchadores es fusión este personaje?", "imagen26",
-				ciencia, 1);
-		final Pregunta pregunta27 = new Pregunta(27,
-				"¿Por qué personaje es poseído Vegeta en Dragon Ball GT?",
-				"imagen27", ciencia, 1);
-		final Pregunta pregunta28 = new Pregunta(28,
-				"¿Cuántas veces muere y resucita Chaoz en el manga?",
-				"imagen28", historia, 2);
-		final Pregunta pregunta29 = new Pregunta(29,
-				"¿Cómo se llama la nieta de Goku?", "imagen29", dragon, 1);
-		final Pregunta pregunta30 = new Pregunta(
-				30,
-				"¿Para qué plataforma estuvo disponible el juego 'Dragon Ball Z: SAGAS'?",
-				"imagen30", ciencia, 2);
-		final Pregunta pregunta31 = new Pregunta(31,
-				"¿Cómo se llama este androide completamente artificial?",
-				"imagen31", dragon, 1);
-		final Pregunta pregunta32 = new Pregunta(32,
-				"¿Quién es este personaje?", "imagen32", dragon, 1);
-		final Pregunta pregunta33 = new Pregunta(33,
-				"¿Quién es este personaje?", "imagen33", dragon, 1);
-		final Pregunta pregunta34 = new Pregunta(34,
-				"¿Dónde esconde Bulma el diamante de la fotografía?",
-				"imagen34", historia, 2);
-		final Pregunta pregunta35 = new Pregunta(35,
-				"¿Qué deseo pidió Piccolo Daimaoh al dragon Shenron?",
-				"imagen35", historia, 1);
-		final Pregunta pregunta36 = new Pregunta(36,
-				"¿Cómo se llama este personaje de tres ojos?", "imagen36",
-				dragon, 1);
-		final Pregunta pregunta37 = new Pregunta(
-				37,
-				"¿Contra qué enemigo se transforma Goku por primera vez en SSJ en Dragon Ball GT?",
-				"imagen37", historia, 2);
-		final Pregunta pregunta38 = new Pregunta(
-				38,
-				"¿Cómo se llama este importante personaje del ejército de Freezer?",
-				"imagen38", dragon, 1);
-		final Pregunta pregunta39 = new Pregunta(39,
-				"Si este personaje no es Freezer, ¿de quién se trata?",
-				"imagen39", dragon, 2);
-		final Pregunta pregunta40 = new Pregunta(
-				40,
-				"¿Qué (supuesto) parentesco comparte este personaje con Freezer?",
-				"imagen40", dragon, 2);
-		final Pregunta pregunta41 = new Pregunta(
-				41,
-				"¿Cómo se llama este importante personaje del ejército de Freezer?",
-				"imagen41", dragon, 1);
-		final Pregunta pregunta42 = new Pregunta(42,
-				"¿Cuál es el nombre de este dragón maligno?", "imagen42",
-				dragon, 2);
-		final Pregunta pregunta43 = new Pregunta(43,
-				"¿Cómo se llama este poderoso enemigo?", "imagen43", dragon, 1);
-		final Pregunta pregunta44 = new Pregunta(
-				44,
-				"¿El odio de que antigua civilización tiene acumulado Hatchiyack?",
-				"imagen44", historia, 2);
-		final Pregunta pregunta45 = new Pregunta(45,
-				"¿Cómo se llama este gracioso villano del manga Neko Majin Z?",
-				"imagen45", dragon, 2);
-		final Pregunta pregunta46 = new Pregunta(
-				46,
-				"¿En qué episodio de Dragon Ball Z aparece el personaje de la imagen?",
-				"imagen46", historia, 2);
-		final Pregunta pregunta47 = new Pregunta(47,
-				"¿Comparte Turles algún vínculo familiar con Goku?",
-				"imagen47", historia, 1);
+		getPreguntaDAO().create(pregunta1);
+		getPreguntaDAO().create(pregunta2);
+		getPreguntaDAO().create(pregunta3);
+		getPreguntaDAO().create(pregunta4);
+		getPreguntaDAO().create(pregunta5);
+		getPreguntaDAO().create(pregunta6);
+		getPreguntaDAO().create(pregunta7);
+		getPreguntaDAO().create(pregunta8);
+		getPreguntaDAO().create(pregunta9);
+		getPreguntaDAO().create(pregunta10);
+		getRespuestaDAO().create(
+				new Respuesta(0, true, "Pilaf, Mai y Suu", pregunta1));
+		getRespuestaDAO().create(
+				new Respuesta(1, false, "Pilaf, Mai y Ginew", pregunta1));
+		getRespuestaDAO().create(
+				new Respuesta(2, false, "Vegeta, Mai y Zarbon", pregunta1));
+		getRespuestaDAO().create(
+				new Respuesta(3, false, "Dodoria, Kiwi y Zarbon", pregunta1));
+		getRespuestaDAO().create(new Respuesta(4, false, "Cell", pregunta2));
+		getRespuestaDAO()
+				.create(new Respuesta(5, false, "Super Bu", pregunta2));
+		getRespuestaDAO().create(new Respuesta(6, true, "Mr Bu", pregunta2));
+		getRespuestaDAO().create(new Respuesta(7, false, "Kid Bu", pregunta2));
+		getRespuestaDAO().create(
+				new Respuesta(8, false, "Ten Shin Han", pregunta3));
+		getRespuestaDAO().create(new Respuesta(9, true, "Yamcha", pregunta3));
+		getRespuestaDAO().create(new Respuesta(10, false, "Puar", pregunta3));
+		getRespuestaDAO().create(new Respuesta(11, false, "Oolong", pregunta3));
+		getRespuestaDAO().create(new Respuesta(12, false, "C17", pregunta4));
+		getRespuestaDAO().create(new Respuesta(13, true, "C18", pregunta4));
+		getRespuestaDAO().create(new Respuesta(14, false, "C19", pregunta4));
+		getRespuestaDAO().create(new Respuesta(15, false, "C20", pregunta4));
+		getRespuestaDAO()
+				.create(new Respuesta(16, false, "Gyumaoh", pregunta5));
+		getRespuestaDAO()
+				.create(new Respuesta(17, false, "Youmaoh", pregunta5));
+		getRespuestaDAO().create(
+				new Respuesta(18, true, "Mutenroshi", pregunta5));
+		getRespuestaDAO()
+				.create(new Respuesta(19, false, "Mutaito", pregunta5));
+		getRespuestaDAO().create(new Respuesta(20, false, "1994", pregunta6));
+		getRespuestaDAO().create(new Respuesta(21, false, "1995", pregunta6));
+		getRespuestaDAO().create(new Respuesta(22, true, "1996", pregunta6));
+		getRespuestaDAO().create(new Respuesta(23, false, "1997", pregunta6));
+		getRespuestaDAO().create(
+				new Respuesta(24, true, "Son Goku y sus amigos", pregunta7));
+		getRespuestaDAO().create(
+				new Respuesta(25, false, "El gran combate", pregunta7));
+		getRespuestaDAO().create(
+				new Respuesta(26, false, "¡Adelante Son Goku!", pregunta7));
+		getRespuestaDAO().create(
+				new Respuesta(27, false, "Un plan diabólico", pregunta7));
+		getRespuestaDAO().create(new Respuesta(28, false, "1989", pregunta8));
+		getRespuestaDAO().create(new Respuesta(29, false, "1990", pregunta8));
+		getRespuestaDAO().create(new Respuesta(30, false, "1993", pregunta8));
+		getRespuestaDAO().create(new Respuesta(31, true, "1996", pregunta8));
+		getRespuestaDAO().create(new Respuesta(32, false, "Raditz", pregunta9));
+		getRespuestaDAO().create(
+				new Respuesta(33, false, "King Cold", pregunta9));
+		getRespuestaDAO().create(new Respuesta(34, true, "Cooler", pregunta9));
+		getRespuestaDAO().create(new Respuesta(35, false, "Broly", pregunta9));
+		getRespuestaDAO().create(
+				new Respuesta(36, false, "Abo y Kado", pregunta10));
+		getRespuestaDAO().create(
+				new Respuesta(37, true, "Birusu y Wisu", pregunta10));
+		getRespuestaDAO().create(
+				new Respuesta(38, false, "Zarbón y Dodoria", pregunta10));
+		getRespuestaDAO().create(
+				new Respuesta(39, false, "Vegeta y Nappa", pregunta10));
 		final Pregunta pregunta48 = new Pregunta(48,
 				"¿Cómo se llama el hermano de Vegeta?", "imagen48", dragon, 2);
 		final Pregunta pregunta49 = new Pregunta(49,
@@ -505,53 +453,165 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 				"¿En qué consiste el 'puff, puff' ('paffu, paffu')?",
 				"imagen127", historia, 2);
 
-		getPreguntaDAO().create(pregunta1);
-		getPreguntaDAO().create(pregunta2);
-		getPreguntaDAO().create(pregunta3);
-		getPreguntaDAO().create(pregunta4);
-		getPreguntaDAO().create(pregunta5);
-		getPreguntaDAO().create(pregunta6);
-		getPreguntaDAO().create(pregunta7);
-		getPreguntaDAO().create(pregunta8);
-		getPreguntaDAO().create(pregunta9);
-		getPreguntaDAO().create(pregunta10);
-		getPreguntaDAO().create(pregunta11);
-		getPreguntaDAO().create(pregunta12);
-		getPreguntaDAO().create(pregunta13);
-		getPreguntaDAO().create(pregunta14);
-		getPreguntaDAO().create(pregunta15);
-		getPreguntaDAO().create(pregunta16);
-		getPreguntaDAO().create(pregunta17);
-		getPreguntaDAO().create(pregunta18);
-		getPreguntaDAO().create(pregunta19);
-		getPreguntaDAO().create(pregunta20);
-		getPreguntaDAO().create(pregunta21);
-		getPreguntaDAO().create(pregunta22);
-		getPreguntaDAO().create(pregunta23);
-		getPreguntaDAO().create(pregunta24);
-		getPreguntaDAO().create(pregunta25);
-		getPreguntaDAO().create(pregunta26);
-		getPreguntaDAO().create(pregunta27);
-		getPreguntaDAO().create(pregunta28);
-		getPreguntaDAO().create(pregunta29);
-		getPreguntaDAO().create(pregunta30);
-		getPreguntaDAO().create(pregunta31);
-		getPreguntaDAO().create(pregunta32);
-		getPreguntaDAO().create(pregunta33);
-		getPreguntaDAO().create(pregunta34);
-		getPreguntaDAO().create(pregunta35);
-		getPreguntaDAO().create(pregunta36);
-		getPreguntaDAO().create(pregunta37);
-		getPreguntaDAO().create(pregunta38);
-		getPreguntaDAO().create(pregunta39);
-		getPreguntaDAO().create(pregunta40);
-		getPreguntaDAO().create(pregunta41);
-		getPreguntaDAO().create(pregunta42);
-		getPreguntaDAO().create(pregunta43);
-		getPreguntaDAO().create(pregunta44);
-		getPreguntaDAO().create(pregunta45);
-		getPreguntaDAO().create(pregunta46);
-		getPreguntaDAO().create(pregunta47);
+		getPreguntaDAO().create(
+				new Pregunta(11, "¿Para qué sirve el objeto de la fotografía?",
+						"imagen11", ciencia, 1));
+		getPreguntaDAO().create(
+				new Pregunta(12, "¿Para qué sirve el objeto de la fotografía?",
+						"imagen12", ciencia, 1));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						13,
+						"¿En qué plataforma podemos disfrutar del juego Dragon Ball Z 'Buyu Retsuden'?",
+						"imagen13", ciencia, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						14,
+						"¿Cuál era el principal poder del personaje de la imagen?",
+						"imagen14", ciencia, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						15,
+						"¿En qué capítulo de Dragon Ball GT alcanza Goku el estado de SSJ3 siendo un niño?",
+						"imagen15", historia, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						16,
+						"¿Qué parentesco comparte el personaje de la fotografía con Goku (Kakarotto)?",
+						"imagen16", historia, 1));
+		getPreguntaDAO().create(
+				new Pregunta(17,
+						"Goku adulto en DBGT convertido en SSJ, ¿es posible?",
+						"imagen17", ciencia, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						18,
+						"¿Qué videojuego es el que se corresponde con el de la imagen?",
+						"imagen18", ciencia, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						19,
+						"¿Cómo se llama el curioso personaje de la fotografía?",
+						"imagen19", dragon, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						20,
+						"¿Cuál es el nombre del guardian de la puerta del otro mundo?",
+						"imagen20", dragon, 1));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						21,
+						"¿A qué se debe el aspecto que presenta Cooler en esta imagen?",
+						"imagen21", ciencia, 2));
+		getPreguntaDAO().create(
+				new Pregunta(22, "¿Cómo se llama la novia de Son Gohan?",
+						"imagen22", dragon, 1));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						23,
+						"¿En qué edición del Tenkaichi Budokai participó Punta, el personaje de la imagen?",
+						"imagen23", torneos, 2));
+		getPreguntaDAO().create(
+				new Pregunta(24,
+						"¿Cuál es el nombre del principe de los saiyans?",
+						"imagen24", dragon, 1));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						25,
+						"¿En qué fase se encuentra Freezer en esta monstruosa forma?",
+						"imagen25", ciencia, 1));
+		getPreguntaDAO().create(
+				new Pregunta(26,
+						"¿De qué dos luchadores es fusión este personaje?",
+						"imagen26", ciencia, 1));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						27,
+						"¿Por qué personaje es poseído Vegeta en Dragon Ball GT?",
+						"imagen27", ciencia, 1));
+		getPreguntaDAO().create(
+				new Pregunta(28,
+						"¿Cuántas veces muere y resucita Chaoz en el manga?",
+						"imagen28", historia, 2));
+		getPreguntaDAO().create(
+				new Pregunta(29, "¿Cómo se llama la nieta de Goku?",
+						"imagen29", dragon, 1));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						30,
+						"¿Para qué plataforma estuvo disponible el juego 'Dragon Ball Z: SAGAS'?",
+						"imagen30", ciencia, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						31,
+						"¿Cómo se llama este androide completamente artificial?",
+						"imagen31", dragon, 1));
+		getPreguntaDAO().create(
+				new Pregunta(32, "¿Quién es este personaje?", "imagen32",
+						dragon, 1));
+		getPreguntaDAO().create(
+				new Pregunta(33, "¿Quién es este personaje?", "imagen33",
+						dragon, 1));
+		getPreguntaDAO().create(
+				new Pregunta(34,
+						"¿Dónde esconde Bulma el diamante de la fotografía?",
+						"imagen34", historia, 2));
+		getPreguntaDAO().create(
+				new Pregunta(35,
+						"¿Qué deseo pidió Piccolo Daimaoh al dragon Shenron?",
+						"imagen35", historia, 1));
+		getPreguntaDAO().create(
+				new Pregunta(36, "¿Cómo se llama este personaje de tres ojos?",
+						"imagen36", dragon, 1));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						37,
+						"¿Contra qué enemigo se transforma Goku por primera vez en SSJ en Dragon Ball GT?",
+						"imagen37", historia, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						38,
+						"¿Cómo se llama este importante personaje del ejército de Freezer?",
+						"imagen38", dragon, 1));
+		getPreguntaDAO().create(
+				new Pregunta(39,
+						"Si este personaje no es Freezer, ¿de quién se trata?",
+						"imagen39", dragon, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						40,
+						"¿Qué (supuesto) parentesco comparte este personaje con Freezer?",
+						"imagen40", dragon, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						41,
+						"¿Cómo se llama este importante personaje del ejército de Freezer?",
+						"imagen41", dragon, 1));
+		getPreguntaDAO().create(
+				new Pregunta(42, "¿Cuál es el nombre de este dragón maligno?",
+						"imagen42", dragon, 2));
+		getPreguntaDAO().create(
+				new Pregunta(43, "¿Cómo se llama este poderoso enemigo?",
+						"imagen43", dragon, 1));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						44,
+						"¿El odio de que antigua civilización tiene acumulado Hatchiyack?",
+						"imagen44", historia, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						45,
+						"¿Cómo se llama este gracioso villano del manga Neko Majin Z?",
+						"imagen45", dragon, 2));
+		getPreguntaDAO()
+				.create(new Pregunta(
+						46,
+						"¿En qué episodio de Dragon Ball Z aparece el personaje de la imagen?",
+						"imagen46", historia, 2));
+		getPreguntaDAO().create(
+				new Pregunta(47,
+						"¿Comparte Turles algún vínculo familiar con Goku?",
+						"imagen47", historia, 1));
 		getPreguntaDAO().create(pregunta48);
 		getPreguntaDAO().create(pregunta49);
 		getPreguntaDAO().create(pregunta50);
@@ -633,381 +693,1023 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		getPreguntaDAO().create(pregunta126);
 		getPreguntaDAO().create(pregunta127);
 
-		getRespuestaDAO().create(
-				new Respuesta(0, true, "Pilaf, Mai y Suu", pregunta1));
-		getRespuestaDAO().create(
-				new Respuesta(1, false, "Pilaf, Mai y Ginew", pregunta1));
-		getRespuestaDAO().create(
-				new Respuesta(2, false, "Vegeta, Mai y Zarbon", pregunta1));
-		getRespuestaDAO().create(
-				new Respuesta(3, false, "Dodoria, Kiwi y Zarbon", pregunta1));
-		getRespuestaDAO().create(new Respuesta(4, false, "Cell", pregunta2));
-		getRespuestaDAO()
-				.create(new Respuesta(5, false, "Super Bu", pregunta2));
-		getRespuestaDAO().create(new Respuesta(6, true, "Mr Bu", pregunta2));
-		getRespuestaDAO().create(new Respuesta(7, false, "Kid Bu", pregunta2));
-		getRespuestaDAO().create(
-				new Respuesta(8, false, "Ten Shin Han", pregunta3));
-		getRespuestaDAO().create(new Respuesta(9, true, "Yamcha", pregunta3));
-		getRespuestaDAO().create(new Respuesta(10, false, "Puar", pregunta3));
-		getRespuestaDAO().create(new Respuesta(11, false, "Oolong", pregunta3));
-		getRespuestaDAO().create(new Respuesta(12, false, "C17", pregunta4));
-		getRespuestaDAO().create(new Respuesta(13, true, "C18", pregunta4));
-		getRespuestaDAO().create(new Respuesta(14, false, "C19", pregunta4));
-		getRespuestaDAO().create(new Respuesta(15, false, "C20", pregunta4));
-		getRespuestaDAO()
-				.create(new Respuesta(16, false, "Gyumaoh", pregunta5));
-		getRespuestaDAO()
-				.create(new Respuesta(17, false, "Youmaoh", pregunta5));
-		getRespuestaDAO().create(
-				new Respuesta(18, true, "Mutenroshi", pregunta5));
-		getRespuestaDAO()
-				.create(new Respuesta(19, false, "Mutaito", pregunta5));
-		getRespuestaDAO().create(new Respuesta(20, false, "1994", pregunta6));
-		getRespuestaDAO().create(new Respuesta(21, false, "1995", pregunta6));
-		getRespuestaDAO().create(new Respuesta(22, true, "1996", pregunta6));
-		getRespuestaDAO().create(new Respuesta(23, false, "1997", pregunta6));
-		getRespuestaDAO().create(
-				new Respuesta(24, true, "Son Goku y sus amigos", pregunta7));
-		getRespuestaDAO().create(
-				new Respuesta(25, false, "El gran combate", pregunta7));
-		getRespuestaDAO().create(
-				new Respuesta(26, false, "¡Adelante Son Goku!", pregunta7));
-		getRespuestaDAO().create(
-				new Respuesta(27, false, "Un plan diabólico", pregunta7));
-		getRespuestaDAO().create(new Respuesta(28, false, "1989", pregunta8));
-		getRespuestaDAO().create(new Respuesta(29, false, "1990", pregunta8));
-		getRespuestaDAO().create(new Respuesta(30, false, "1993", pregunta8));
-		getRespuestaDAO().create(new Respuesta(31, true, "1996", pregunta8));
-		getRespuestaDAO().create(new Respuesta(32, false, "Raditz", pregunta9));
-		getRespuestaDAO().create(
-				new Respuesta(33, false, "King Cold", pregunta9));
-		getRespuestaDAO().create(new Respuesta(34, true, "Cooler", pregunta9));
-		getRespuestaDAO().create(new Respuesta(35, false, "Broly", pregunta9));
-		getRespuestaDAO().create(
-				new Respuesta(36, false, "Abo y Kado", pregunta10));
-		getRespuestaDAO().create(
-				new Respuesta(37, true, "Birusu y Wisu", pregunta10));
-		getRespuestaDAO().create(
-				new Respuesta(38, false, "Zarbón y Dodoria", pregunta10));
-		getRespuestaDAO().create(
-				new Respuesta(39, false, "Vegeta y Nappa", pregunta10));
 		getRespuestaDAO()
 				.create(new Respuesta(
 						40,
 						false,
 						"Todo aquel que lleva puesto el pendiente incrementa su fuerza.",
-						pregunta11));
+						new Pregunta(11,
+								"¿Para qué sirve el objeto de la fotografía?",
+								"imagen11", ciencia, 1)));
 		getRespuestaDAO().create(
 				new Respuesta(41, false, "Es meramente un elemento estético",
-						pregunta11));
+						new Pregunta(11,
+								"¿Para qué sirve el objeto de la fotografía?",
+								"imagen11", ciencia, 1)));
 		getRespuestaDAO()
 				.create(new Respuesta(
 						42,
 						true,
 						"Es un pendiente de los dioses kaio shin. Permite realizar una ancestral fusión",
-						pregunta11));
+						new Pregunta(11,
+								"¿Para qué sirve el objeto de la fotografía?",
+								"imagen11", ciencia, 1)));
 		getRespuestaDAO().create(
-				new Respuesta(43, false, "Es un simple reloj", pregunta12));
+				new Respuesta(43, false, "Es un simple reloj", new Pregunta(12,
+						"¿Para qué sirve el objeto de la fotografía?",
+						"imagen12", ciencia, 1)));
 		getRespuestaDAO().create(
 				new Respuesta(44, true, "Permite detectar las bolas de dragón",
-						pregunta12));
+						new Pregunta(12,
+								"¿Para qué sirve el objeto de la fotografía?",
+								"imagen12", ciencia, 1)));
 		getRespuestaDAO().create(
 				new Respuesta(45, false, "Permite localizar focos de ki",
-						pregunta12));
+						new Pregunta(12,
+								"¿Para qué sirve el objeto de la fotografía?",
+								"imagen12", ciencia, 1)));
 		getRespuestaDAO().create(
 				new Respuesta(46, false, "Es el nuevo smartphone de apple",
-						pregunta12));
+						new Pregunta(12,
+								"¿Para qué sirve el objeto de la fotografía?",
+								"imagen12", ciencia, 1)));
 		getRespuestaDAO()
-				.create(new Respuesta(47, true, "Sega Megadrive / Genesis",
-						pregunta13));
+				.create(new Respuesta(
+						47,
+						true,
+						"Sega Megadrive / Genesis",
+						new Pregunta(
+								13,
+								"¿En qué plataforma podemos disfrutar del juego Dragon Ball Z 'Buyu Retsuden'?",
+								"imagen13", ciencia, 2)));
 		getRespuestaDAO()
-				.create(new Respuesta(48, false, "Super nintendo / Famicom",
-						pregunta13));
-		getRespuestaDAO().create(
-				new Respuesta(49, false, "Nintendo Game Boy", pregunta13));
-		getRespuestaDAO().create(
-				new Respuesta(50, false, "Neo Geo", pregunta13));
-		getRespuestaDAO().create(
-				new Respuesta(51, false, "Puede realizar el Kame Hame Ha",
-						pregunta14));
-		getRespuestaDAO().create(
-				new Respuesta(52, true,
+				.create(new Respuesta(
+						48,
+						false,
+						"Super nintendo / Famicom",
+						new Pregunta(
+								13,
+								"¿En qué plataforma podemos disfrutar del juego Dragon Ball Z 'Buyu Retsuden'?",
+								"imagen13", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						49,
+						false,
+						"Nintendo Game Boy",
+						new Pregunta(
+								13,
+								"¿En qué plataforma podemos disfrutar del juego Dragon Ball Z 'Buyu Retsuden'?",
+								"imagen13", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						50,
+						false,
+						"Neo Geo",
+						new Pregunta(
+								13,
+								"¿En qué plataforma podemos disfrutar del juego Dragon Ball Z 'Buyu Retsuden'?",
+								"imagen13", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						51,
+						false,
+						"Puede realizar el Kame Hame Ha",
+						new Pregunta(
+								14,
+								"¿Cuál era el principal poder del personaje de la imagen?",
+								"imagen14", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						52,
+						true,
 						"Tiene la capacidad de variar el tamaño de su cuerpo",
-						pregunta14));
+						new Pregunta(
+								14,
+								"¿Cuál era el principal poder del personaje de la imagen?",
+								"imagen14", ciencia, 2)));
 		getRespuestaDAO()
-				.create(new Respuesta(53, false, "Tiene poderes curativos",
-						pregunta14));
+				.create(new Respuesta(
+						53,
+						false,
+						"Tiene poderes curativos",
+						new Pregunta(
+								14,
+								"¿Cuál era el principal poder del personaje de la imagen?",
+								"imagen14", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						54,
+						false,
+						"Ninguno, es un simple humano",
+						new Pregunta(
+								14,
+								"¿Cuál era el principal poder del personaje de la imagen?",
+								"imagen14", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						55,
+						false,
+						"Episodio 6",
+						new Pregunta(
+								15,
+								"¿En qué capítulo de Dragon Ball GT alcanza Goku el estado de SSJ3 siendo un niño?",
+								"imagen15", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						56,
+						false,
+						"Episodio 25",
+						new Pregunta(
+								15,
+								"¿En qué capítulo de Dragon Ball GT alcanza Goku el estado de SSJ3 siendo un niño?",
+								"imagen15", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						57,
+						true,
+						"Episodio 29",
+						new Pregunta(
+								15,
+								"¿En qué capítulo de Dragon Ball GT alcanza Goku el estado de SSJ3 siendo un niño?",
+								"imagen15", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						58,
+						false,
+						"Episodio 33",
+						new Pregunta(
+								15,
+								"¿En qué capítulo de Dragon Ball GT alcanza Goku el estado de SSJ3 siendo un niño?",
+								"imagen15", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						59,
+						false,
+						"Sobrino",
+						new Pregunta(
+								16,
+								"¿Qué parentesco comparte el personaje de la fotografía con Goku (Kakarotto)?",
+								"imagen16", historia, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						60,
+						false,
+						"Hijo",
+						new Pregunta(
+								16,
+								"¿Qué parentesco comparte el personaje de la fotografía con Goku (Kakarotto)?",
+								"imagen16", historia, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						61,
+						false,
+						"Hermano",
+						new Pregunta(
+								16,
+								"¿Qué parentesco comparte el personaje de la fotografía con Goku (Kakarotto)?",
+								"imagen16", historia, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						62,
+						true,
+						"Tataranieto",
+						new Pregunta(
+								16,
+								"¿Qué parentesco comparte el personaje de la fotografía con Goku (Kakarotto)?",
+								"imagen16", historia, 1)));
 		getRespuestaDAO().create(
-				new Respuesta(54, false, "Ninguno, es un simple humano",
-						pregunta14));
-		getRespuestaDAO().create(
-				new Respuesta(55, false, "Episodio 6", pregunta15));
-		getRespuestaDAO().create(
-				new Respuesta(56, false, "Episodio 25", pregunta15));
-		getRespuestaDAO().create(
-				new Respuesta(57, true, "Episodio 29", pregunta15));
-		getRespuestaDAO().create(
-				new Respuesta(58, false, "Episodio 33", pregunta15));
-		getRespuestaDAO().create(
-				new Respuesta(59, false, "Sobrino", pregunta16));
-		getRespuestaDAO().create(new Respuesta(60, false, "Hijo", pregunta16));
-		getRespuestaDAO().create(
-				new Respuesta(61, false, "Hermano", pregunta16));
-		getRespuestaDAO().create(
-				new Respuesta(62, true, "Tataranieto", pregunta16));
-		getRespuestaDAO().create(
-				new Respuesta(63, false, "No, no lo es", pregunta17));
+				new Respuesta(63, false, "No, no lo es", new Pregunta(17,
+						"Goku adulto en DBGT convertido en SSJ, ¿es posible?",
+						"imagen17", ciencia, 2)));
 		getRespuestaDAO()
 				.create(new Respuesta(
 						64,
 						true,
 						"Es un personaje seleccionable en el Dragon Ball 'Final Bout' de PSX",
-						pregunta17));
+						new Pregunta(
+								17,
+								"Goku adulto en DBGT convertido en SSJ, ¿es posible?",
+								"imagen17", ciencia, 2)));
 		getRespuestaDAO()
 				.create(new Respuesta(
 						65,
 						false,
 						"En el primer capítulo de DBGT le podemos ver en este estado",
-						pregunta17));
+						new Pregunta(
+								17,
+								"Goku adulto en DBGT convertido en SSJ, ¿es posible?",
+								"imagen17", ciencia, 2)));
 		getRespuestaDAO()
 				.create(new Respuesta(
 						66,
 						false,
 						"En el último capítulo de DBGT le podemos ver en este estado",
-						pregunta17));
+						new Pregunta(
+								17,
+								"Goku adulto en DBGT convertido en SSJ, ¿es posible?",
+								"imagen17", ciencia, 2)));
 		getRespuestaDAO()
-				.create(new Respuesta(67, false, "Dragon Ball: Final Bout",
-						pregunta18));
-		getRespuestaDAO().create(
-				new Respuesta(68, true, "Dragon Ball: Revenge of King Piccolo",
-						pregunta18));
-		getRespuestaDAO().create(
-				new Respuesta(69, false, "Dragon Ball: Advance adventure",
-						pregunta18));
-		getRespuestaDAO().create(
-				new Respuesta(70, false, "Dragon Ball Z Budokai", pregunta18));
+				.create(new Respuesta(
+						67,
+						false,
+						"Dragon Ball: Final Bout",
+						new Pregunta(
+								18,
+								"¿Qué videojuego es el que se corresponde con el de la imagen?",
+								"imagen18", ciencia, 2)));
 		getRespuestaDAO()
-				.create(new Respuesta(71, false, "Chichi", pregunta19));
+				.create(new Respuesta(
+						68,
+						true,
+						"Dragon Ball: Revenge of King Piccolo",
+						new Pregunta(
+								18,
+								"¿Qué videojuego es el que se corresponde con el de la imagen?",
+								"imagen18", ciencia, 2)));
 		getRespuestaDAO()
-				.create(new Respuesta(72, false, "Marron", pregunta19));
-		getRespuestaDAO().create(new Respuesta(73, true, "Grey", pregunta19));
-		getRespuestaDAO().create(new Respuesta(74, false, "Snow", pregunta19));
-		getRespuestaDAO().create(
-				new Respuesta(75, false, "Kaioh Sama", pregunta20));
-		getRespuestaDAO().create(
-				new Respuesta(76, false, "Ro Kaioh Shin", pregunta20));
+				.create(new Respuesta(
+						69,
+						false,
+						"Dragon Ball: Advance adventure",
+						new Pregunta(
+								18,
+								"¿Qué videojuego es el que se corresponde con el de la imagen?",
+								"imagen18", ciencia, 2)));
 		getRespuestaDAO()
-				.create(new Respuesta(77, false, "Kibito", pregunta20));
-		getRespuestaDAO().create(
-				new Respuesta(78, true, "Enma Daioh", pregunta20));
+				.create(new Respuesta(
+						70,
+						false,
+						"Dragon Ball Z Budokai",
+						new Pregunta(
+								18,
+								"¿Qué videojuego es el que se corresponde con el de la imagen?",
+								"imagen18", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						71,
+						false,
+						"Chichi",
+						new Pregunta(
+								19,
+								"¿Cómo se llama el curioso personaje de la fotografía?",
+								"imagen19", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						72,
+						false,
+						"Marron",
+						new Pregunta(
+								19,
+								"¿Cómo se llama el curioso personaje de la fotografía?",
+								"imagen19", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						73,
+						true,
+						"Grey",
+						new Pregunta(
+								19,
+								"¿Cómo se llama el curioso personaje de la fotografía?",
+								"imagen19", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						74,
+						false,
+						"Snow",
+						new Pregunta(
+								19,
+								"¿Cómo se llama el curioso personaje de la fotografía?",
+								"imagen19", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						75,
+						false,
+						"Kaioh Sama",
+						new Pregunta(
+								20,
+								"¿Cuál es el nombre del guardian de la puerta del otro mundo?",
+								"imagen20", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						76,
+						false,
+						"Ro Kaioh Shin",
+						new Pregunta(
+								20,
+								"¿Cuál es el nombre del guardian de la puerta del otro mundo?",
+								"imagen20", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						77,
+						false,
+						"Kibito",
+						new Pregunta(
+								20,
+								"¿Cuál es el nombre del guardian de la puerta del otro mundo?",
+								"imagen20", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						78,
+						true,
+						"Enma Daioh",
+						new Pregunta(
+								20,
+								"¿Cuál es el nombre del guardian de la puerta del otro mundo?",
+								"imagen20", dragon, 1)));
 		getRespuestaDAO()
 				.create(new Respuesta(
 						79,
 						true,
 						"Se debe al comportamiento de asimilación de un microchip inteligente",
-						pregunta21));
+						new Pregunta(
+								21,
+								"¿A qué se debe el aspecto que presenta Cooler en esta imagen?",
+								"imagen21", ciencia, 2)));
 		getRespuestaDAO()
 				.create(new Respuesta(
 						80,
 						false,
 						"Se debe a la reconstrucción de su cuerpo tras su enfrentamiento con Goku",
-						pregunta21));
+						new Pregunta(
+								21,
+								"¿A qué se debe el aspecto que presenta Cooler en esta imagen?",
+								"imagen21", ciencia, 2)));
 		getRespuestaDAO()
 				.create(new Respuesta(
 						81,
 						false,
 						"Se debe a los arreglos que el Dr. Gero introdujo en su cuerpo",
-						pregunta21));
-		getRespuestaDAO().create(new Respuesta(82, false, "Bulma", pregunta22));
-		getRespuestaDAO().create(new Respuesta(83, true, "Videl", pregunta22));
+						new Pregunta(
+								21,
+								"¿A qué se debe el aspecto que presenta Cooler en esta imagen?",
+								"imagen21", ciencia, 2)));
+		getRespuestaDAO().create(
+				new Respuesta(82, false, "Bulma", new Pregunta(22,
+						"¿Cómo se llama la novia de Son Gohan?", "imagen22",
+						dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(83, true, "Videl", new Pregunta(22,
+						"¿Cómo se llama la novia de Son Gohan?", "imagen22",
+						dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(84, false, "Marron", new Pregunta(22,
+						"¿Cómo se llama la novia de Son Gohan?", "imagen22",
+						dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(85, false, "Pasta", new Pregunta(22,
+						"¿Cómo se llama la novia de Son Gohan?", "imagen22",
+						dragon, 1)));
 		getRespuestaDAO()
-				.create(new Respuesta(84, false, "Marron", pregunta22));
-		getRespuestaDAO().create(new Respuesta(85, false, "Pasta", pregunta22));
-		getRespuestaDAO().create(
-				new Respuesta(86, false, "22º Tenkaichi Budokai", pregunta23));
-		getRespuestaDAO().create(
-				new Respuesta(87, false, "23º Tenkaichi Budokai", pregunta23));
-		getRespuestaDAO().create(
-				new Respuesta(88, false, "24º Tenkaichi Budokai", pregunta23));
-		getRespuestaDAO().create(
-				new Respuesta(89, true, "25º Tenkaichi Budokai", pregunta23));
-		getRespuestaDAO().create(new Respuesta(90, false, "Nappa", pregunta24));
+				.create(new Respuesta(
+						86,
+						false,
+						"22º Tenkaichi Budokai",
+						new Pregunta(
+								23,
+								"¿En qué edición del Tenkaichi Budokai participó Punta, el personaje de la imagen?",
+								"imagen23", torneos, 2)));
 		getRespuestaDAO()
-				.create(new Respuesta(91, false, "Raditz", pregunta24));
-		getRespuestaDAO().create(new Respuesta(92, true, "Vegeta", pregunta24));
-		getRespuestaDAO().create(
-				new Respuesta(93, false, "Bardock", pregunta24));
-		getRespuestaDAO().create(
-				new Respuesta(94, true, "Tercera fase", pregunta25));
-		getRespuestaDAO().create(
-				new Respuesta(95, false, "Segunda fase", pregunta25));
-		getRespuestaDAO().create(
-				new Respuesta(96, false, "Cuarta fase", pregunta25));
-		getRespuestaDAO().create(
-				new Respuesta(97, false, "Primera fase", pregunta25));
-		getRespuestaDAO().create(
-				new Respuesta(98, false, "Goku + Vegeta", pregunta26));
-		getRespuestaDAO().create(
-				new Respuesta(99, true, "Uub + Buu", pregunta26));
-		getRespuestaDAO().create(
-				new Respuesta(100, false, "Baby + Vegeta", pregunta26));
-		getRespuestaDAO().create(
-				new Respuesta(101, false, "Kibito + Kaioh Shin", pregunta26));
-		getRespuestaDAO().create(
-				new Respuesta(102, false, "Super C17", pregunta27));
+				.create(new Respuesta(
+						87,
+						false,
+						"23º Tenkaichi Budokai",
+						new Pregunta(
+								23,
+								"¿En qué edición del Tenkaichi Budokai participó Punta, el personaje de la imagen?",
+								"imagen23", torneos, 2)));
 		getRespuestaDAO()
-				.create(new Respuesta(103, false, "Redic", pregunta27));
-		getRespuestaDAO().create(new Respuesta(104, true, "Baby", pregunta27));
-		getRespuestaDAO().create(
-				new Respuesta(105, false, "Dr. Myu", pregunta27));
-		getRespuestaDAO().create(new Respuesta(106, false, "Dos", pregunta28));
-		getRespuestaDAO().create(new Respuesta(107, false, "Una", pregunta28));
-		getRespuestaDAO().create(
-				new Respuesta(108, false, "Cuatro", pregunta28));
-		getRespuestaDAO().create(new Respuesta(109, true, "Tres", pregunta28));
-		getRespuestaDAO().create(new Respuesta(110, true, "Pan", pregunta29));
-		getRespuestaDAO().create(new Respuesta(111, false, "Bra", pregunta29));
+				.create(new Respuesta(
+						88,
+						false,
+						"24º Tenkaichi Budokai",
+						new Pregunta(
+								23,
+								"¿En qué edición del Tenkaichi Budokai participó Punta, el personaje de la imagen?",
+								"imagen23", torneos, 2)));
 		getRespuestaDAO()
-				.create(new Respuesta(112, false, "Videl", pregunta29));
+				.create(new Respuesta(
+						89,
+						true,
+						"25º Tenkaichi Budokai",
+						new Pregunta(
+								23,
+								"¿En qué edición del Tenkaichi Budokai participó Punta, el personaje de la imagen?",
+								"imagen23", torneos, 2)));
 		getRespuestaDAO().create(
-				new Respuesta(113, false, "Marron", pregunta29));
+				new Respuesta(90, false, "Nappa", new Pregunta(24,
+						"¿Cuál es el nombre del principe de los saiyans?",
+						"imagen24", dragon, 1)));
 		getRespuestaDAO().create(
-				new Respuesta(114, true, "Xbox, Play Station 2 y Game Cube",
-						pregunta30));
+				new Respuesta(91, false, "Raditz", new Pregunta(24,
+						"¿Cuál es el nombre del principe de los saiyans?",
+						"imagen24", dragon, 1)));
 		getRespuestaDAO().create(
-				new Respuesta(115, false, "Xbox 360, Play Station 3 y Wii",
-						pregunta30));
+				new Respuesta(92, true, "Vegeta", new Pregunta(24,
+						"¿Cuál es el nombre del principe de los saiyans?",
+						"imagen24", dragon, 1)));
 		getRespuestaDAO().create(
-				new Respuesta(116, false, "Play Station 2 y Wii", pregunta30));
-		getRespuestaDAO().create(
-				new Respuesta(117, false, "Game Cube y Xbox", pregunta30));
-		getRespuestaDAO().create(new Respuesta(118, false, "C13", pregunta31));
-		getRespuestaDAO().create(new Respuesta(119, true, "C16", pregunta31));
-		getRespuestaDAO().create(new Respuesta(120, false, "C15", pregunta31));
-		getRespuestaDAO().create(new Respuesta(121, false, "C14", pregunta31));
-		getRespuestaDAO().create(
-				new Respuesta(122, false, "Muchi Mochi", pregunta32));
-		getRespuestaDAO().create(new Respuesta(123, true, "Loud", pregunta32));
+				new Respuesta(93, false, "Bardock", new Pregunta(24,
+						"¿Cuál es el nombre del principe de los saiyans?",
+						"imagen24", dragon, 1)));
 		getRespuestaDAO()
-				.create(new Respuesta(124, false, "Redic", pregunta32));
-		getRespuestaDAO().create(
-				new Respuesta(125, false, "Sonpara", pregunta32));
-		getRespuestaDAO().create(
-				new Respuesta(126, false, "Gyumaoh", pregunta33));
-		getRespuestaDAO().create(
-				new Respuesta(127, false, "Kame Senin", pregunta33));
-		getRespuestaDAO().create(
-				new Respuesta(128, true, "Son Gohan Ojichan", pregunta33));
-		getRespuestaDAO().create(
-				new Respuesta(129, false, "Tsuru Senin", pregunta33));
-		getRespuestaDAO().create(
-				new Respuesta(130, false, "Dentro de su mochila", pregunta34));
-		getRespuestaDAO().create(
-				new Respuesta(131, false,
-						"En ningún momento lo lleva escondido", pregunta34));
-		getRespuestaDAO().create(
-				new Respuesta(132, true, "Se lo mete en la entrepierna",
-						pregunta34));
-		getRespuestaDAO().create(
-				new Respuesta(133, false, "Lo lleva metido en el escote",
-						pregunta34));
-		getRespuestaDAO().create(
-				new Respuesta(134, false, "La vida eterna", pregunta35));
-		getRespuestaDAO().create(
-				new Respuesta(135, false, "Reinar en el mundo", pregunta35));
-		getRespuestaDAO().create(
-				new Respuesta(136, false, "Reinar en el universo", pregunta35));
-		getRespuestaDAO().create(
-				new Respuesta(137, true, "Volver a recuperar su juventud",
-						pregunta35));
-		getRespuestaDAO().create(
-				new Respuesta(138, false, "Tao Pai Pai", pregunta36));
+				.create(new Respuesta(
+						94,
+						true,
+						"Tercera fase",
+						new Pregunta(
+								25,
+								"¿En qué fase se encuentra Freezer en esta monstruosa forma?",
+								"imagen25", ciencia, 1)));
 		getRespuestaDAO()
-				.create(new Respuesta(139, false, "Chaoz", pregunta36));
-		getRespuestaDAO().create(
-				new Respuesta(140, false, "Tsuru Senin", pregunta36));
-		getRespuestaDAO().create(
-				new Respuesta(141, true, "Ten Shin Han", pregunta36));
-		getRespuestaDAO().create(new Respuesta(142, true, "Redic", pregunta37));
-		getRespuestaDAO().create(
-				new Respuesta(143, false, "Don Kear", pregunta37));
+				.create(new Respuesta(
+						95,
+						false,
+						"Segunda fase",
+						new Pregunta(
+								25,
+								"¿En qué fase se encuentra Freezer en esta monstruosa forma?",
+								"imagen25", ciencia, 1)));
 		getRespuestaDAO()
-				.create(new Respuesta(144, false, "Pilaf", pregunta37));
-		getRespuestaDAO().create(
-				new Respuesta(145, false, "Muchi Mochi", pregunta37));
+				.create(new Respuesta(
+						96,
+						false,
+						"Cuarta fase",
+						new Pregunta(
+								25,
+								"¿En qué fase se encuentra Freezer en esta monstruosa forma?",
+								"imagen25", ciencia, 1)));
 		getRespuestaDAO()
-				.create(new Respuesta(146, true, "Zarbon", pregunta38));
+				.create(new Respuesta(
+						97,
+						false,
+						"Primera fase",
+						new Pregunta(
+								25,
+								"¿En qué fase se encuentra Freezer en esta monstruosa forma?",
+								"imagen25", ciencia, 1)));
 		getRespuestaDAO().create(
-				new Respuesta(147, false, "Dodoria", pregunta38));
+				new Respuesta(98, false, "Goku + Vegeta", new Pregunta(26,
+						"¿De qué dos luchadores es fusión este personaje?",
+						"imagen26", ciencia, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(99, true, "Uub + Buu", new Pregunta(26,
+						"¿De qué dos luchadores es fusión este personaje?",
+						"imagen26", ciencia, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(100, false, "Baby + Vegeta", new Pregunta(26,
+						"¿De qué dos luchadores es fusión este personaje?",
+						"imagen26", ciencia, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(101, false, "Kibito + Kaioh Shin", new Pregunta(
+						26, "¿De qué dos luchadores es fusión este personaje?",
+						"imagen26", ciencia, 1)));
 		getRespuestaDAO()
-				.create(new Respuesta(148, false, "Ginew", pregunta38));
-		getRespuestaDAO().create(
-				new Respuesta(149, false, "Reecom", pregunta38));
-		getRespuestaDAO().create(
-				new Respuesta(150, false, "Kuriza", pregunta39));
-		getRespuestaDAO().create(
-				new Respuesta(151, true, "Chilled", pregunta39));
-		getRespuestaDAO().create(
-				new Respuesta(152, false, "Cooler", pregunta39));
-		getRespuestaDAO().create(
-				new Respuesta(153, false, "King Cold", pregunta39));
-		getRespuestaDAO().create(
-				new Respuesta(154, false, "Es su hermano pequeño", pregunta40));
-		getRespuestaDAO().create(
-				new Respuesta(155, true, "Es su hijo", pregunta40));
-		getRespuestaDAO().create(
-				new Respuesta(156, false, "Es su sobrino", pregunta40));
-		getRespuestaDAO().create(
-				new Respuesta(157, false, "No es familia suya", pregunta40));
-		getRespuestaDAO().create(
-				new Respuesta(158, false, "Zarbon", pregunta41));
-		getRespuestaDAO().create(
-				new Respuesta(159, false, "Ghourd", pregunta41));
-		getRespuestaDAO().create(
-				new Respuesta(160, true, "Dodoria", pregunta41));
-		getRespuestaDAO().create(
-				new Respuesta(161, false, "Burter", pregunta41));
-		getRespuestaDAO().create(
-				new Respuesta(162, false, "Chih Shinron", pregunta42));
-		getRespuestaDAO().create(
-				new Respuesta(163, false, "Suu Shinron", pregunta42));
-		getRespuestaDAO().create(
-				new Respuesta(164, true, "Ryan Shinron", pregunta42));
-		getRespuestaDAO().create(
-				new Respuesta(165, false, "San Shinron", pregunta42));
-		getRespuestaDAO().create(
-				new Respuesta(166, false, "Vegeta", pregunta43));
-		getRespuestaDAO().create(new Respuesta(167, false, "Baby", pregunta43));
-		getRespuestaDAO().create(
-				new Respuesta(168, false, "Majin Buu", pregunta43));
-		getRespuestaDAO().create(
-				new Respuesta(169, true, "Vegeta-Baby", pregunta43));
-		getRespuestaDAO().create(
-				new Respuesta(170, false, "Saiyanos", pregunta44));
-		getRespuestaDAO().create(
-				new Respuesta(171, false, "Namekianos", pregunta44));
-		getRespuestaDAO().create(
-				new Respuesta(172, false, "Terrícolas", pregunta44));
-		getRespuestaDAO().create(
-				new Respuesta(173, true, "Tsufurs", pregunta44));
+				.create(new Respuesta(
+						102,
+						false,
+						"Super C17",
+						new Pregunta(
+								27,
+								"¿Por qué personaje es poseído Vegeta en Dragon Ball GT?",
+								"imagen27", ciencia, 1)));
 		getRespuestaDAO()
-				.create(new Respuesta(174, true, "Kuriza", pregunta45));
+				.create(new Respuesta(
+						103,
+						false,
+						"Redic",
+						new Pregunta(
+								27,
+								"¿Por qué personaje es poseído Vegeta en Dragon Ball GT?",
+								"imagen27", ciencia, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						104,
+						true,
+						"Baby",
+						new Pregunta(
+								27,
+								"¿Por qué personaje es poseído Vegeta en Dragon Ball GT?",
+								"imagen27", ciencia, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						105,
+						false,
+						"Dr. Myu",
+						new Pregunta(
+								27,
+								"¿Por qué personaje es poseído Vegeta en Dragon Ball GT?",
+								"imagen27", ciencia, 1)));
 		getRespuestaDAO().create(
-				new Respuesta(175, false, "Neko Majin", pregunta45));
-		getRespuestaDAO().create(new Respuesta(176, false, "Onio", pregunta45));
+				new Respuesta(106, false, "Dos", new Pregunta(28,
+						"¿Cuántas veces muere y resucita Chaoz en el manga?",
+						"imagen28", historia, 2)));
 		getRespuestaDAO().create(
-				new Respuesta(177, false, "Thunderbolt", pregunta45));
+				new Respuesta(107, false, "Una", new Pregunta(28,
+						"¿Cuántas veces muere y resucita Chaoz en el manga?",
+						"imagen28", historia, 2)));
 		getRespuestaDAO().create(
-				new Respuesta(178, true, "Capítulo 54", pregunta46));
+				new Respuesta(108, false, "Cuatro", new Pregunta(28,
+						"¿Cuántas veces muere y resucita Chaoz en el manga?",
+						"imagen28", historia, 2)));
 		getRespuestaDAO().create(
-				new Respuesta(179, false, "Capítulo 55", pregunta46));
+				new Respuesta(109, true, "Tres", new Pregunta(28,
+						"¿Cuántas veces muere y resucita Chaoz en el manga?",
+						"imagen28", historia, 2)));
 		getRespuestaDAO().create(
-				new Respuesta(180, false, "Capítulo 56", pregunta46));
+				new Respuesta(110, true, "Pan", new Pregunta(29,
+						"¿Cómo se llama la nieta de Goku?", "imagen29", dragon,
+						1)));
 		getRespuestaDAO().create(
-				new Respuesta(181, false, "Capítulo 57", pregunta46));
-		getRespuestaDAO().create(new Respuesta(182, true, "No", pregunta47));
-		getRespuestaDAO().create(new Respuesta(183, false, "Sí", pregunta47));
+				new Respuesta(111, false, "Bra", new Pregunta(29,
+						"¿Cómo se llama la nieta de Goku?", "imagen29", dragon,
+						1)));
+		getRespuestaDAO().create(
+				new Respuesta(112, false, "Videl", new Pregunta(29,
+						"¿Cómo se llama la nieta de Goku?", "imagen29", dragon,
+						1)));
+		getRespuestaDAO().create(
+				new Respuesta(113, false, "Marron", new Pregunta(29,
+						"¿Cómo se llama la nieta de Goku?", "imagen29", dragon,
+						1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						114,
+						true,
+						"Xbox, Play Station 2 y Game Cube",
+						new Pregunta(
+								30,
+								"¿Para qué plataforma estuvo disponible el juego 'Dragon Ball Z: SAGAS'?",
+								"imagen30", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						115,
+						false,
+						"Xbox 360, Play Station 3 y Wii",
+						new Pregunta(
+								30,
+								"¿Para qué plataforma estuvo disponible el juego 'Dragon Ball Z: SAGAS'?",
+								"imagen30", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						116,
+						false,
+						"Play Station 2 y Wii",
+						new Pregunta(
+								30,
+								"¿Para qué plataforma estuvo disponible el juego 'Dragon Ball Z: SAGAS'?",
+								"imagen30", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						117,
+						false,
+						"Game Cube y Xbox",
+						new Pregunta(
+								30,
+								"¿Para qué plataforma estuvo disponible el juego 'Dragon Ball Z: SAGAS'?",
+								"imagen30", ciencia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						118,
+						false,
+						"C13",
+						new Pregunta(
+								31,
+								"¿Cómo se llama este androide completamente artificial?",
+								"imagen31", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						119,
+						true,
+						"C16",
+						new Pregunta(
+								31,
+								"¿Cómo se llama este androide completamente artificial?",
+								"imagen31", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						120,
+						false,
+						"C15",
+						new Pregunta(
+								31,
+								"¿Cómo se llama este androide completamente artificial?",
+								"imagen31", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						121,
+						false,
+						"C14",
+						new Pregunta(
+								31,
+								"¿Cómo se llama este androide completamente artificial?",
+								"imagen31", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(122, false, "Muchi Mochi", new Pregunta(32,
+						"¿Quién es este personaje?", "imagen32", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(123, true, "Loud", new Pregunta(32,
+						"¿Quién es este personaje?", "imagen32", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(124, false, "Redic", new Pregunta(32,
+						"¿Quién es este personaje?", "imagen32", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(125, false, "Sonpara", new Pregunta(32,
+						"¿Quién es este personaje?", "imagen32", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(126, false, "Gyumaoh", new Pregunta(33,
+						"¿Quién es este personaje?", "imagen33", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(127, false, "Kame Senin", new Pregunta(33,
+						"¿Quién es este personaje?", "imagen33", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(128, true, "Son Gohan Ojichan", new Pregunta(33,
+						"¿Quién es este personaje?", "imagen33", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(129, false, "Tsuru Senin", new Pregunta(33,
+						"¿Quién es este personaje?", "imagen33", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(130, false, "Dentro de su mochila", new Pregunta(
+						34,
+						"¿Dónde esconde Bulma el diamante de la fotografía?",
+						"imagen34", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						131,
+						false,
+						"En ningún momento lo lleva escondido",
+						new Pregunta(
+								34,
+								"¿Dónde esconde Bulma el diamante de la fotografía?",
+								"imagen34", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						132,
+						true,
+						"Se lo mete en la entrepierna",
+						new Pregunta(
+								34,
+								"¿Dónde esconde Bulma el diamante de la fotografía?",
+								"imagen34", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						133,
+						false,
+						"Lo lleva metido en el escote",
+						new Pregunta(
+								34,
+								"¿Dónde esconde Bulma el diamante de la fotografía?",
+								"imagen34", historia, 2)));
+		getRespuestaDAO().create(
+				new Respuesta(134, false, "La vida eterna", new Pregunta(35,
+						"¿Qué deseo pidió Piccolo Daimaoh al dragon Shenron?",
+						"imagen35", historia, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(135, false, "Reinar en el mundo", new Pregunta(
+						35,
+						"¿Qué deseo pidió Piccolo Daimaoh al dragon Shenron?",
+						"imagen35", historia, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						136,
+						false,
+						"Reinar en el universo",
+						new Pregunta(
+								35,
+								"¿Qué deseo pidió Piccolo Daimaoh al dragon Shenron?",
+								"imagen35", historia, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						137,
+						true,
+						"Volver a recuperar su juventud",
+						new Pregunta(
+								35,
+								"¿Qué deseo pidió Piccolo Daimaoh al dragon Shenron?",
+								"imagen35", historia, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(138, false, "Tao Pai Pai", new Pregunta(36,
+						"¿Cómo se llama este personaje de tres ojos?",
+						"imagen36", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(139, false, "Chaoz", new Pregunta(36,
+						"¿Cómo se llama este personaje de tres ojos?",
+						"imagen36", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(140, false, "Tsuru Senin", new Pregunta(36,
+						"¿Cómo se llama este personaje de tres ojos?",
+						"imagen36", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(141, true, "Ten Shin Han", new Pregunta(36,
+						"¿Cómo se llama este personaje de tres ojos?",
+						"imagen36", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						142,
+						true,
+						"Redic",
+						new Pregunta(
+								37,
+								"¿Contra qué enemigo se transforma Goku por primera vez en SSJ en Dragon Ball GT?",
+								"imagen37", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						143,
+						false,
+						"Don Kear",
+						new Pregunta(
+								37,
+								"¿Contra qué enemigo se transforma Goku por primera vez en SSJ en Dragon Ball GT?",
+								"imagen37", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						144,
+						false,
+						"Pilaf",
+						new Pregunta(
+								37,
+								"¿Contra qué enemigo se transforma Goku por primera vez en SSJ en Dragon Ball GT?",
+								"imagen37", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						145,
+						false,
+						"Muchi Mochi",
+						new Pregunta(
+								37,
+								"¿Contra qué enemigo se transforma Goku por primera vez en SSJ en Dragon Ball GT?",
+								"imagen37", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						146,
+						true,
+						"Zarbon",
+						new Pregunta(
+								38,
+								"¿Cómo se llama este importante personaje del ejército de Freezer?",
+								"imagen38", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						147,
+						false,
+						"Dodoria",
+						new Pregunta(
+								38,
+								"¿Cómo se llama este importante personaje del ejército de Freezer?",
+								"imagen38", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						148,
+						false,
+						"Ginew",
+						new Pregunta(
+								38,
+								"¿Cómo se llama este importante personaje del ejército de Freezer?",
+								"imagen38", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						149,
+						false,
+						"Reecom",
+						new Pregunta(
+								38,
+								"¿Cómo se llama este importante personaje del ejército de Freezer?",
+								"imagen38", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(150, false, "Kuriza", new Pregunta(39,
+						"Si este personaje no es Freezer, ¿de quién se trata?",
+						"imagen39", dragon, 2)));
+		getRespuestaDAO().create(
+				new Respuesta(151, true, "Chilled", new Pregunta(39,
+						"Si este personaje no es Freezer, ¿de quién se trata?",
+						"imagen39", dragon, 2)));
+		getRespuestaDAO().create(
+				new Respuesta(152, false, "Cooler", new Pregunta(39,
+						"Si este personaje no es Freezer, ¿de quién se trata?",
+						"imagen39", dragon, 2)));
+		getRespuestaDAO().create(
+				new Respuesta(153, false, "King Cold", new Pregunta(39,
+						"Si este personaje no es Freezer, ¿de quién se trata?",
+						"imagen39", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						154,
+						false,
+						"Es su hermano pequeño",
+						new Pregunta(
+								40,
+								"¿Qué (supuesto) parentesco comparte este personaje con Freezer?",
+								"imagen40", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						155,
+						true,
+						"Es su hijo",
+						new Pregunta(
+								40,
+								"¿Qué (supuesto) parentesco comparte este personaje con Freezer?",
+								"imagen40", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						156,
+						false,
+						"Es su sobrino",
+						new Pregunta(
+								40,
+								"¿Qué (supuesto) parentesco comparte este personaje con Freezer?",
+								"imagen40", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						157,
+						false,
+						"No es familia suya",
+						new Pregunta(
+								40,
+								"¿Qué (supuesto) parentesco comparte este personaje con Freezer?",
+								"imagen40", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						158,
+						false,
+						"Zarbon",
+						new Pregunta(
+								41,
+								"¿Cómo se llama este importante personaje del ejército de Freezer?",
+								"imagen41", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						159,
+						false,
+						"Ghourd",
+						new Pregunta(
+								41,
+								"¿Cómo se llama este importante personaje del ejército de Freezer?",
+								"imagen41", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						160,
+						true,
+						"Dodoria",
+						new Pregunta(
+								41,
+								"¿Cómo se llama este importante personaje del ejército de Freezer?",
+								"imagen41", dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						161,
+						false,
+						"Burter",
+						new Pregunta(
+								41,
+								"¿Cómo se llama este importante personaje del ejército de Freezer?",
+								"imagen41", dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(162, false, "Chih Shinron", new Pregunta(42,
+						"¿Cuál es el nombre de este dragón maligno?",
+						"imagen42", dragon, 2)));
+		getRespuestaDAO().create(
+				new Respuesta(163, false, "Suu Shinron", new Pregunta(42,
+						"¿Cuál es el nombre de este dragón maligno?",
+						"imagen42", dragon, 2)));
+		getRespuestaDAO().create(
+				new Respuesta(164, true, "Ryan Shinron", new Pregunta(42,
+						"¿Cuál es el nombre de este dragón maligno?",
+						"imagen42", dragon, 2)));
+		getRespuestaDAO().create(
+				new Respuesta(165, false, "San Shinron", new Pregunta(42,
+						"¿Cuál es el nombre de este dragón maligno?",
+						"imagen42", dragon, 2)));
+		getRespuestaDAO().create(
+				new Respuesta(166, false, "Vegeta", new Pregunta(43,
+						"¿Cómo se llama este poderoso enemigo?", "imagen43",
+						dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(167, false, "Baby", new Pregunta(43,
+						"¿Cómo se llama este poderoso enemigo?", "imagen43",
+						dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(168, false, "Majin Buu", new Pregunta(43,
+						"¿Cómo se llama este poderoso enemigo?", "imagen43",
+						dragon, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(169, true, "Vegeta-Baby", new Pregunta(43,
+						"¿Cómo se llama este poderoso enemigo?", "imagen43",
+						dragon, 1)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						170,
+						false,
+						"Saiyanos",
+						new Pregunta(
+								44,
+								"¿El odio de que antigua civilización tiene acumulado Hatchiyack?",
+								"imagen44", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						171,
+						false,
+						"Namekianos",
+						new Pregunta(
+								44,
+								"¿El odio de que antigua civilización tiene acumulado Hatchiyack?",
+								"imagen44", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						172,
+						false,
+						"Terrícolas",
+						new Pregunta(
+								44,
+								"¿El odio de que antigua civilización tiene acumulado Hatchiyack?",
+								"imagen44", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						173,
+						true,
+						"Tsufurs",
+						new Pregunta(
+								44,
+								"¿El odio de que antigua civilización tiene acumulado Hatchiyack?",
+								"imagen44", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						174,
+						true,
+						"Kuriza",
+						new Pregunta(
+								45,
+								"¿Cómo se llama este gracioso villano del manga Neko Majin Z?",
+								"imagen45", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						175,
+						false,
+						"Neko Majin",
+						new Pregunta(
+								45,
+								"¿Cómo se llama este gracioso villano del manga Neko Majin Z?",
+								"imagen45", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						176,
+						false,
+						"Onio",
+						new Pregunta(
+								45,
+								"¿Cómo se llama este gracioso villano del manga Neko Majin Z?",
+								"imagen45", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						177,
+						false,
+						"Thunderbolt",
+						new Pregunta(
+								45,
+								"¿Cómo se llama este gracioso villano del manga Neko Majin Z?",
+								"imagen45", dragon, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						178,
+						true,
+						"Capítulo 54",
+						new Pregunta(
+								46,
+								"¿En qué episodio de Dragon Ball Z aparece el personaje de la imagen?",
+								"imagen46", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						179,
+						false,
+						"Capítulo 55",
+						new Pregunta(
+								46,
+								"¿En qué episodio de Dragon Ball Z aparece el personaje de la imagen?",
+								"imagen46", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						180,
+						false,
+						"Capítulo 56",
+						new Pregunta(
+								46,
+								"¿En qué episodio de Dragon Ball Z aparece el personaje de la imagen?",
+								"imagen46", historia, 2)));
+		getRespuestaDAO()
+				.create(new Respuesta(
+						181,
+						false,
+						"Capítulo 57",
+						new Pregunta(
+								46,
+								"¿En qué episodio de Dragon Ball Z aparece el personaje de la imagen?",
+								"imagen46", historia, 2)));
+		getRespuestaDAO().create(
+				new Respuesta(182, true, "No", new Pregunta(47,
+						"¿Comparte Turles algún vínculo familiar con Goku?",
+						"imagen47", historia, 1)));
+		getRespuestaDAO().create(
+				new Respuesta(183, false, "Sí", new Pregunta(47,
+						"¿Comparte Turles algún vínculo familiar con Goku?",
+						"imagen47", historia, 1)));
 		getRespuestaDAO().create(
 				new Respuesta(184, false, "Raditz", pregunta48));
 		getRespuestaDAO()
@@ -1846,7 +2548,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		getRespuestaDAO().create(
 				new Respuesta(496, false, "En realizar los pasos de la fusión",
 						pregunta127));
-
 	}
 
 	@Override

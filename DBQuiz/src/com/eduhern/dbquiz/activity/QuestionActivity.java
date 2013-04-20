@@ -81,22 +81,7 @@ public class QuestionActivity extends OrmLiteBaseListActivity<DatabaseHelper> {
 	@Override
 	protected void onListItemClick(final ListView l, final View v,
 			final int posicion, final long id) {
-		if (preguntaActual.getRespuestas().get(posicion).isCorrecta()) {
-			correcto.start();
-			respuestasCorrectas++;
-			((TextView) findViewById(R.id.puntuacion1))
-					.setBackgroundDrawable(getResources().getDrawable(
-							getResources().getIdentifier("puntuacion_ok",
-									"drawable", getPackageName())));
-		} else {
-			fallo.start();
-			((TextView) findViewById(R.id.puntuacion1))
-					.setBackgroundDrawable(getResources().getDrawable(
-							getResources().getIdentifier("puntuacion_bad",
-									"drawable", getPackageName())));
-		}
-		((TextView) findViewById(R.id.puntuacion1)).setText(String
-				.valueOf(respuestasCorrectas));
+		actualizarPreguntasCorrectas(posicion);
 
 		if (preguntasYaJugadas.size() == maximoPreguntas
 				|| preguntasYaJugadas.size() >= preguntas.size()) {
@@ -110,6 +95,21 @@ public class QuestionActivity extends OrmLiteBaseListActivity<DatabaseHelper> {
 			respuestas.addAll(preguntaActual.getRespuestas());
 			adapter.notifyDataSetChanged();
 		}
+	}
+
+	private void actualizarPreguntasCorrectas(final int posicion) {
+		final TextView puntuacion = (TextView) findViewById(R.id.puntuacion1);
+		if (preguntaActual.getRespuestas().get(posicion).isCorrecta()) {
+			correcto.start();
+			respuestasCorrectas++;
+			puntuacion.setBackgroundDrawable(getResources().getDrawable(
+					R.drawable.puntuacion_ok));
+		} else {
+			fallo.start();
+			puntuacion.setBackgroundDrawable(getResources().getDrawable(
+					R.drawable.puntuacion_bad));
+		}
+		puntuacion.setText(String.valueOf(respuestasCorrectas));
 	}
 
 	private void recuperarSiguientePregunta() {
@@ -126,8 +126,7 @@ public class QuestionActivity extends OrmLiteBaseListActivity<DatabaseHelper> {
 			public void run() {
 				((TextView) findViewById(R.id.puntuacion1))
 						.setBackgroundDrawable(getResources().getDrawable(
-								getResources().getIdentifier("puntuacion",
-										"drawable", getPackageName())));
+								R.drawable.puntuacion));
 			}
 		}, 200);
 
@@ -141,13 +140,13 @@ public class QuestionActivity extends OrmLiteBaseListActivity<DatabaseHelper> {
 		final ImageView imagen = (ImageView) findViewById(R.id.imageView2);
 		imagen.setImageDrawable(drawable);
 
-		final int id_c = getResources().getIdentifier(
+		final int idCategoria = getResources().getIdentifier(
 				preguntaActual.getIdCategoria().getFondo(), "drawable",
 				getPackageName());
-		final Drawable drawable_c = getResources().getDrawable(id_c);
-		final ImageView imagen_categoria = (ImageView) findViewById(R.id.categoria);
+		final ImageView imagenCategoria = (ImageView) findViewById(R.id.categoria);
 
-		imagen_categoria.setImageDrawable(drawable_c);
+		imagenCategoria.setImageDrawable(getResources()
+				.getDrawable(idCategoria));
 
 		final TextView textViewPregunta = (TextView) findViewById(R.id.texto_pregunta);
 		textViewPregunta.setText(preguntaActual.getDescripcion());

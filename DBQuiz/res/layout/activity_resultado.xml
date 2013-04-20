@@ -10,6 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ResultadoActivity" >
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -23,7 +24,6 @@
             android:background="@drawable/puntuacion_final"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textIsSelectable="true"
             android:textStyle="bold" />
 
         <ImageView
@@ -51,7 +51,6 @@
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:layout_weight="1.5"
-        android:alpha="0.7"
         android:background="@android:color/darker_gray"
         android:text="@string/volver_a_jugar" />
 

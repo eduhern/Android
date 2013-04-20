@@ -14,26 +14,25 @@ import com.j256.ormlite.android.apptools.OrmLiteBaseListActivity;
 public class AyudaActivity extends OrmLiteBaseListActivity<DatabaseHelper> {
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_ayuda);
+		setContentView(com.eduhern.dbquiz.R.layout.activity_ayuda);
 
-		List<Categoria> categorias = getHelper().getCategoriaDAO()
+		final List<Categoria> categorias = getHelper().getCategoriaDAO()
 				.queryForAll();
-		CategoriaAdapter adapter = new CategoriaAdapter(this,
+		final CategoriaAdapter adapter = new CategoriaAdapter(this,
 				com.eduhern.dbquiz.R.layout.fila_ayuda, categorias);
 		setListAdapter(adapter);
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
+	public boolean onCreateOptionsMenu(final Menu menu) {
 		getMenuInflater().inflate(R.menu.ayuda, menu);
 		return true;
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(final MenuItem item) {
 		finish();
 		return super.onOptionsItemSelected(item);
 	}

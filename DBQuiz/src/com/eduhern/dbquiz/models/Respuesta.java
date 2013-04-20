@@ -24,36 +24,36 @@ public class Respuesta implements Parcelable {
 	public Respuesta() {
 	}
 
-	public Respuesta(final int id, boolean correcta, String descripcion,
-			Pregunta pregunta) {
+	public Respuesta(final int id, final boolean correcta,
+			final String descripcion, final Pregunta pregunta) {
 		super();
-		correcta = correcta;
-		descripcion = descripcion;
-		pregunta = pregunta;
+		this.correcta = correcta;
+		this.descripcion = descripcion;
+		this.pregunta = pregunta;
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		id = id;
+	public void setId(final int id) {
+		this.id = id;
 	}
 
 	public boolean isCorrecta() {
 		return correcta;
 	}
 
-	public void setCorrecta(boolean correcta) {
-		correcta = correcta;
+	public void setCorrecta(final boolean correcta) {
+		this.correcta = correcta;
 	}
 
 	public String getDescripcion() {
 		return descripcion;
 	}
 
-	public void setDescripcion(String descripcion) {
-		descripcion = descripcion;
+	public void setDescripcion(final String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public Pregunta getPregunta() {
@@ -65,12 +65,10 @@ public class Respuesta implements Parcelable {
 	}
 
 	public int describeContents() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	public void writeToParcel(final Parcel dest, final int flags) {
-		// TODO Auto-generated method stub
 		dest.writeInt(id);
 		dest.writeByte((byte) (correcta ? 1 : 0));
 		dest.writeString(descripcion);
@@ -78,11 +76,11 @@ public class Respuesta implements Parcelable {
 	}
 
 	public static final Parcelable.Creator<Respuesta> CREATOR = new Parcelable.Creator<Respuesta>() {
-		public Respuesta createFromParcel(Parcel in) {
+		public Respuesta createFromParcel(final Parcel in) {
 			return new Respuesta(in);
 		}
 
-		public Respuesta[] newArray(int size) {
+		public Respuesta[] newArray(final int size) {
 			return new Respuesta[size];
 		}
 	};

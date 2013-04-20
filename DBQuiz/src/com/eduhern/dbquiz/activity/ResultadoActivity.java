@@ -19,7 +19,7 @@ import com.eduhern.dbquiz.R;
 
 public class ResultadoActivity extends Activity implements OnLongClickListener,
 		OnClickListener {
-	private ImageView imagen_fin;
+	private ImageView imagenFin;
 	private boolean fin = false;
 	private int respuestasCorrectas;
 	private int maximoPreguntas;
@@ -38,23 +38,23 @@ public class ResultadoActivity extends Activity implements OnLongClickListener,
 		genero = !preferencias.getBoolean("genero", false);
 		dificultad = preferencias.getBoolean("dificultad", false);
 
-		final TextView textViewPregunta = (TextView) findViewById(R.id.texto_resultado);
+		final TextView pregunta = (TextView) findViewById(R.id.texto_resultado);
 		respuestasCorrectas = Integer.parseInt(getIntent().getStringExtra(
 				"resultado"));
-		textViewPregunta.setText(respuestasCorrectas + " de " + maximoPreguntas
+		pregunta.setText(respuestasCorrectas + " de " + maximoPreguntas
 				+ " respuestas correctas");
 
-		imagen_fin = (ImageView) findViewById(R.id.imagen_resultado);
+		imagenFin = (ImageView) findViewById(R.id.imagen_resultado);
 
 		if (!genero) {
-			final int id_imagen_resultado = getResources().getIdentifier(
+			final int idImagenResultado = getResources().getIdentifier(
 					"foto_camara_principal_g", "drawable", getPackageName());
 			final Drawable drawable = getResources().getDrawable(
-					id_imagen_resultado);
-			imagen_fin.setImageDrawable(drawable);
+					idImagenResultado);
+			imagenFin.setImageDrawable(drawable);
 		}
 
-		imagen_fin.setOnLongClickListener(this);
+		imagenFin.setOnLongClickListener(this);
 
 		final Button boton = (Button) findViewById(R.id.boton1);
 		boton.setOnClickListener(this);
@@ -86,78 +86,33 @@ public class ResultadoActivity extends Activity implements OnLongClickListener,
 	}
 
 	public boolean onLongClick(final View v) {
-		// TODO Auto-generated method stub
-		MediaPlayer musica;
-
-		if (fin) {
-			musica = MediaPlayer.create(this, R.raw.teletransporte);
-		} else {
-			if (genero) {
-				musica = MediaPlayer.create(this, R.raw.foto);
-			} else {
-				musica = MediaPlayer.create(this, R.raw.radar);
-
-			}
-		}
-
+		final MediaPlayer musica = MediaPlayer.create(this,
+				fin ? R.raw.teletransporte : genero ? R.raw.foto : R.raw.radar);
 		musica.start();
-
-		int id_imagen_final;
 
 		final int porcentaje = Math.round(Float.parseFloat(String
 				.valueOf(respuestasCorrectas))
 				/ Float.parseFloat(String.valueOf(maximoPreguntas)) * 100);
 
-		if (genero) {
-			if (porcentaje < 25) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_1",
-						"drawable", getPackageName());
-			} else if (25 <= porcentaje && porcentaje < 50) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_2",
-						"drawable", getPackageName());
-			} else if (50 <= porcentaje && porcentaje < 75) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_3",
-						"drawable", getPackageName());
-			} else if (75 <= porcentaje && porcentaje < 100) {
-				id_imagen_final = getResources().getIdentifier("foto_camara_4",
-						"drawable", getPackageName());
-			} else {
-				if (maximoPreguntas == 50 && dificultad) {
-					id_imagen_final = getResources().getIdentifier(
-							"foto_camara_god", "drawable", getPackageName());
-				} else {
-					id_imagen_final = getResources().getIdentifier(
-							"foto_camara_5", "drawable", getPackageName());
-
-				}
-			}
+		String id = null;
+		if (porcentaje < 25) {
+			id = genero ? "foto_camara_1" : "foto_camara_1_g";
+		} else if (porcentaje < 50) {
+			id = genero ? "foto_camara_2" : "foto_camara_2_g";
+		} else if (porcentaje < 75) {
+			id = genero ? "foto_camara_3" : "foto_camara_3_g";
+		} else if (porcentaje < 100) {
+			id = genero ? "foto_camara_4" : "foto_camara_4_g";
+		} else if (maximoPreguntas == 50 && dificultad) {
+			id = "foto_camara_god";
 		} else {
-			if (porcentaje < 25) {
-				id_imagen_final = getResources().getIdentifier(
-						"foto_camara_1_g", "drawable", getPackageName());
-			} else if (25 <= porcentaje && porcentaje < 50) {
-				id_imagen_final = getResources().getIdentifier(
-						"foto_camara_2_g", "drawable", getPackageName());
-			} else if (50 <= porcentaje && porcentaje < 75) {
-				id_imagen_final = getResources().getIdentifier(
-						"foto_camara_3_g", "drawable", getPackageName());
-			} else if (75 <= porcentaje && porcentaje < 100) {
-				id_imagen_final = getResources().getIdentifier(
-						"foto_camara_4_g", "drawable", getPackageName());
-			} else {
-				if (maximoPreguntas == 50 && dificultad) {
-					id_imagen_final = getResources().getIdentifier(
-							"foto_camara_god", "drawable", getPackageName());
-				} else {
-					id_imagen_final = getResources().getIdentifier(
-							"foto_camara_5", "drawable", getPackageName());
-
-				}
-			}
+			id = "foto_camara_5";
 		}
 
-		final Drawable drawable = getResources().getDrawable(id_imagen_final);
-		imagen_fin.setImageDrawable(drawable);
+		imagenFin
+				.setImageDrawable(getResources().getDrawable(
+						getResources().getIdentifier(id, "drawable",
+								getPackageName())));
 
 		fin = true;
 		return true;

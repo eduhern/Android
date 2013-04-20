@@ -52,7 +52,6 @@
         android:layout_weight="3"
         android:background="@drawable/fondo_texto_pregunta"
         android:gravity="center"
-        android:textIsSelectable="true"
         android:textStyle="bold" />
 
     <RelativeLayout

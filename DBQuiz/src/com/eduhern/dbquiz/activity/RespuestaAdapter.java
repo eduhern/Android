@@ -28,10 +28,10 @@ public class RespuestaAdapter extends ArrayAdapter<Respuesta> {
 		}
 
 		final Respuesta transaction = getItem(position);
-		final TextView fila1 = (TextView) convertView
+		final TextView fila = (TextView) convertView
 				.findViewById(com.eduhern.dbquiz.R.id.fila1);
 
-		fila1.setText(transaction.getDescripcion());
+		fila.setText(transaction.getDescripcion());
 
 		return convertView;
 	}
