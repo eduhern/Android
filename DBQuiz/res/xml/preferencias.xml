@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:summary="Configuración de la partida"
+        android:title="Configuración" >
+        <ListPreference
+            android:entries="@array/numerosPreguntas"
+            android:entryValues="@array/numerosPreguntas"
+            android:icon="@drawable/ic_np"
+            android:key="numPreguntas"
+            android:summary="Número de preguntas que contendrá la partida"
+            android:title="Número de preguntas"
+            android:defaultValue="30"
+            android:persistent="true" />
+
+        <CheckBoxPreference
+            android:icon="@drawable/ic_dificultad"
+            android:key="dificultad"
+            android:summary="¿Te atreves con la dificultad máxima?"
+            android:title="Modo experto"
+            android:summaryOn="Modo experto activado"
+            android:summaryOff="Modo experto desactivado"
+			android:defaultValue="false"
+            android:persistent="true"
+            />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_chico_chica"
+            android:key="genero"
+            android:summaryOff="¡Final para chicos!"
+            android:summaryOn="¡Final para chicas!"
+            android:switchTextOff="Chico"
+            android:switchTextOn="Chica"
+			android:defaultValue="true"
+            android:title="Género"
+            android:persistent="true" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

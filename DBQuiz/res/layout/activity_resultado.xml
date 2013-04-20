@@ -1,27 +1,68 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/fondo"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ResultadoActivity" >
-    <TextView
-        android:id="@+id/texto_resultado"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_weight="2" >
+
+        <TextView
+            android:id="@+id/texto_resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/puntuacion_final"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="true"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/twitter"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/tuitear"
+            android:src="@drawable/twitter" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imagen_resultado"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="14"
+        android:contentDescription="@string/descripcion_imagen_resultado"
+        android:src="@drawable/foto_camara_principal" />
+
+    <Button
+        android:id="@+id/boton1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.5"
+        android:alpha="0.7"
+        android:background="@android:color/darker_gray"
+        android:text="@string/volver_a_jugar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:background="@drawable/fondo_copyright"
         android:gravity="center"
-        android:text=""
-        android:textStyle="bold" />
-    <ImageView android:contentDescription="@string/imagen"
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/texto_resultado"
-        android:layout_centerHorizontal="true"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="112dp"
-        android:src="@drawable/puntuacion" />
-</RelativeLayout>
+        android:text="@string/copyright"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+</LinearLayout>

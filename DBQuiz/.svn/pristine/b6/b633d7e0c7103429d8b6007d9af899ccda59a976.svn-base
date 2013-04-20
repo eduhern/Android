@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="foto_personal">Foto personal</string>
+    <string name="app_name">Dragon QuiZ</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Dragon QuiZ</string>
+    <string name="title_activity_question">Pregunta</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="title_activity_resultado">ResultadoActivity</string>
+    <string name="copyright">©Akira Toriyama /Bird Studio/Shueisha Inc./Toei Animation/Fuji TV</string>
+    <string name="comenzar">Comenzar</string>
+    <string name="imagen_titulo">Dragon QuiZ</string>
+    <string name="imagen_principal">Gokuh Daizenshuu 1</string>
+    <string name="imagen_categoria">Categoria de la pregunta</string>
+    <string name="imagen_pregunta">Imagen relacionada con la pregunta a responder</string>
+    <string name="resultado_inicial">0</string>
+    <string name="volver_a_jugar">Volver a Jugar</string>
+    <string name="descripcion_imagen_resultado">Imagen resultado</string>
+    <string name="vineta">Viñeta de la lista de resultados</string>
+    <string name="title_activity_ayuda">Ayuda</string>
+    <string name="action_settings">Volver</string>
+    <string name="title_activity_creditos">Acerca de&#8230;</string>
+    <string name="descripcion_ayuda">La mecánica es realmente sencilla. Responda a las 30 preguntas eligiendo entre las posibles opciones de respuesta. En función del resultado final obtenido, Mutenroshi nos sorprenderá con sus fotografías.</string>
+    <string name="descripcion_personal">Siempre he querido homenajear de alguna manera a la mundialmente conocida serie de manganime llamada Dragon Ball. Aprovechando el reciente 20 aniversario de la publicación del manga en España y el estreno en Japón del film Dragon Ball Z: "Battle of Gods", me he decidido a desarrollar mi primera aplicación para Android. Un sencillo proyecto con pocas pretensiones con el único propósito de rendir tributo a un manga y anime que han ido creciendo conmigo de la mano.</string>
+    <string name="aviso_imagenes">Las imágenes utilizadas han sido obtenidas en su mayoría de Google Imágenes, si hubiera cualquier problema con la publicación de estos contenidos, rogaría que me lo hicieran saber y de inmediato procederé a suprimirlas. Este es un proyecto de caracter altruista y para nada lo realizo con fines lucrativos.</string>
+    <string name="agradecimientos">Por último, me gustaría nombrar a varias personas que durante las tres semanas de desarrollo del proyecto me han echado una mano: Albert Fernández, Ángel Marcos, Carmina Cuesta, Daniel Vegas, David González Diez, David González Nieto, Javier Gamarra, Jorge Martín, Raquel Angulo y Rubén Toquero. Gracias a todos ellos.</string>
+    <string name="version">Dragon QuiZ - Versión 1.0.2</string>
+    <string name="m">M</string>
+    <string name="tuitear">Tuitear</string>
+    <string name="dbcproject">La mayor parte de los renders son propiedad de "DBCProject: Dragon Ball Characters Project", publicados en http://dbcproject.deviantart.com/ y en http://www.boladedragon.com/foro.</string>
+    
+</resources>

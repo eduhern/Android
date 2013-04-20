@@ -1,53 +1,89 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_question"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".QuestionActivity" >
+
+    <ImageView
+        android:id="@+id/categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="left"
+        android:layout_weight="1"
+        android:contentDescription="@string/imagen_categoria" />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal" >
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:background="@drawable/fondo_pregunta"
+        android:orientation="horizontal"
+        android:paddingTop="10dp" >
+
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_centerVertical="true"
-            android:contentDescription="@string/imagen" />
+            android:contentDescription="@string/imagen_pregunta" />
+
         <TextView
             android:id="@+id/puntuacion1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:background="@drawable/puntuacion"
-            android:height="3dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="14dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:textStyle="bold"
-            android:width="10dp" />
+            android:gravity="center"
+            android:text="@string/resultado_inicial"
+            android:textStyle="bold" />
     </RelativeLayout>
+
     <TextView
         android:id="@+id/texto_pregunta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/fondo_texto_pregunta"
         android:gravity="center"
+        android:textIsSelectable="true"
         android:textStyle="bold" />
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="218dp"
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
         android:background="@drawable/fondo_respuesta"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:paddingTop="32dp" >
-    </ListView>
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/m"
+            android:paddingBottom="10dp"
+            android:src="@drawable/m" />
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:divider="@android:color/black"
+            android:dividerHeight="0.5dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp" >
+        </ListView>
+    </RelativeLayout>
+
 </LinearLayout>

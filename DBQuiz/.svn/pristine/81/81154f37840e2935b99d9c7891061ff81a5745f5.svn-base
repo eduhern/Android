@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/fondo"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".AyudaActivity" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:alpha="0.7"
+        android:background="@android:color/white"
+        android:padding="10dp"
+        android:text="@string/descripcion_ayuda"
+        android:textColor="@android:color/black" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="3dp"
+        android:alpha="0.7"
+        android:background="@android:color/white"
+        android:dividerHeight="0.5dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:scrollbars="vertical"
+        android:choiceMode="none"
+        android:drawSelectorOnTop="false"
+       >
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,93 @@
+package com.eduhern.dbquiz.activity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.eduhern.dbquiz.R;
+
+public class ResultadoActivity extends Activity implements OnLongClickListener, OnClickListener {
+	ImageView imagen_fin;
+	boolean fin = false;
+	String respuestasCorrectas;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_resultado);
+		TextView textViewPregunta = (TextView) findViewById(R.id.texto_resultado);
+		respuestasCorrectas = getIntent().getStringExtra("resultado");
+		textViewPregunta.setText(respuestasCorrectas + " respuestas correctas");
+
+		imagen_fin = (ImageView) findViewById(R.id.imagen_resultado);
+
+		imagen_fin.setOnLongClickListener(this);
+
+		Button boton = (Button) findViewById(R.id.boton1);
+		boton.setOnClickListener(this);
+
+		ImageView imagenTwitter = (ImageView) findViewById(R.id.twitter);
+		imagenTwitter.setOnClickListener(this);
+	}
+
+	public void onClick(View v) {
+
+		switch (v.getId()) {
+
+		case R.id.twitter:
+			String tweetUrl = "https://twitter.com/intent/tweet?text=He acertado " + respuestasCorrectas
+					+ " de 30 preguntas en el Dragon Ball QuiZ para Android. Ya disponible en Google Play:&url="
+					+ "https://play.google.com/store/apps/details?id=com.eduhern.dbquiz";
+			Uri uri = Uri.parse(tweetUrl);
+			startActivity(new Intent(Intent.ACTION_VIEW, uri));
+			break;
+		default:
+			finish();
+		}
+
+	}
+
+	public boolean onLongClick(View v) {
+		// TODO Auto-generated method stub
+		MediaPlayer musica;
+
+		if (fin) {
+			musica = MediaPlayer.create(this, R.raw.teletransporte);
+		} else {
+			musica = MediaPlayer.create(this, R.raw.foto);
+		}
+
+		musica.start();
+
+		int resultado = Integer.parseInt(getIntent().getStringExtra("resultado"));
+		int id_imagen_final;
+
+		if (resultado < 5) {
+			id_imagen_final = getResources().getIdentifier("foto_camara_1", "drawable", getPackageName());
+		} else if (5 <= resultado && resultado < 15) {
+			id_imagen_final = getResources().getIdentifier("foto_camara_2", "drawable", getPackageName());
+		} else if (15 <= resultado && resultado < 20) {
+			id_imagen_final = getResources().getIdentifier("foto_camara_3", "drawable", getPackageName());
+		} else if (20 <= resultado && resultado < 30) {
+			id_imagen_final = getResources().getIdentifier("foto_camara_4", "drawable", getPackageName());
+		} else {
+			id_imagen_final = getResources().getIdentifier("foto_camara_5", "drawable", getPackageName());
+		}
+
+		Drawable drawable = getResources().getDrawable(id_imagen_final);
+		imagen_fin.setImageDrawable(drawable);
+
+		fin = true;
+		return true;
+	}
+
+}
